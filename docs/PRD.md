@@ -183,6 +183,6 @@ Abaixo estão as funcionalidades principais do MVP (Minimum Viable Product), est
 
 ---
 
-**Última atualização:** Março de 2027  
+**Última atualização:** Março de 2026  
 **Versão:** 1.0  
 **Status:** Em desenvolvimento
