@@ -1,6 +1,6 @@
 # price-watcher
 
-### **Autor:** Seu Nome Aqui
+### **Autor:** Augusto Emanuel Pereira
 
 Este projeto tem como objetivo implementar uma aplicação web que permite aos usuários monitorar produtos em diferentes lojas online e receber notificações quando houver queda de preço.
 
