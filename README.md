@@ -22,7 +22,7 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 ## 🎨 Design
 
 - [🎨 Design System](./docs/design-system.md) - Identidade visual da aplicação.
-- [🖼️ Protótipo no Figma](#) - Telas interativas (adicione seu link aqui).
+- [🖼️ Protótipo no Figma](#) - Telas interativas (https://www.figma.com/design/gDR2vWH7VWbVcbxkZj9I7S/PriceWatcher?node-id=0-1&t=b1BywPwWQzpRqaQO-1).
 
 ---
 
