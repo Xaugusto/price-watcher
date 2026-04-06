@@ -8,36 +8,25 @@ Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura
 
 ```mermaid
 erDiagram
-USUARIO ||--o{ PRODUTO_MONITORADO : "monitora"
-PRODUTO ||--o{ PRECOS : "possui histórico"
-USUARIO {
-  string id PK "Gerado automaticamente"
-  string nome
-  string email "Usado para login"
-  string senha
-}
-PRODUTO {
-  string id PK "Gerado automaticamente"
-  string nome
-  string url
-  string loja
-  string sku
-  float preco_atual
-  string imagem
-}
-PRODUTO_MONITORADO {
-  string id PK
-  string usuarioId FK "Vínculo com Usuário"
-  string produtoId FK "Vínculo com Produto"
-  float preco_alvo
-  boolean ativo
-}
-PRECOS {
-  string id PK
-  string produtoId FK "Vínculo com Produto"
-  float preco
-  string data "Formato ISO (YYYY-MM-DD)"
-}
+    USUARIO ||--o{ PRODUTO : "cadastra"
+    
+    USUARIO {
+        int id_usuario PK
+        string nome
+        string email
+        string senha
+    }
+
+    PRODUTO {
+        int id_produto PK
+        int id_usuario FK
+        string url_ml
+        string url_amzn
+        string id_link_usuario
+        decimal meta_de_preco
+        decimal preco_ml
+        decimal preco_amzn
+    }
 ```
 
 ## 2. Dicionário de Dados
