@@ -108,7 +108,7 @@ O **Bootstrap** foi escolhido como framework CSS após análise comparativa com 
 
 #### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
 
-- [x] ID 01 - Prototipar interfaces responsivas (mobile e desktop)
+- [x] ID 01 - Prototipar interfaces responsivas  (mobile e desktop)
   > ✔️ Protótipo criado no **Stitch** com telas de Home, Lista de Produtos, Detalhes e Alertas — versões mobile e desktop. [Ver protótipo](https://stitch.withgoogle.com/projects/1963391761961224150)
 - [x] ID 02 - Implementar layout com Bootstrap 5
   > ✔️ **Bootstrap v5.3.3** instalado via NPM (`npm install bootstrap@5.3.3`). Integrado ao projeto como dependência oficial no `package.json`.
