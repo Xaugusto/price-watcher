@@ -1,143 +1,345 @@
 
-# 🛠️ Especificação Técnica (Tech Spec) - PriceWatcher
+# 🛠️ Especificação Técnica (Tech Spec) - Price Watcher
 
-Este documento detalha a arquitetura técnica, o modelo de dados e os contratos de API simulada (via JSON Server) necessários para o funcionamento do sistema PriceWatcher.
+> **Atenção para IAs (Cursor, Copilot, ChatGPT):** Este documento é a fonte de verdade técnica do projeto. Ao gerar código, utilize **exclusivamente** as versões, classes e métodos especificados abaixo. Não sugira versões alternativas ou APIs diferentes das listadas.
 
-## 1. Modelo de Dados (Diagrama ER)
+---
 
-Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura do nosso "banco de dados" (`db.json`) e como as informações se conectam.
+## 1. Stack Tecnológica — Versões Exatas
+
+| Camada | Tecnologia | Versão Exata | CDN / Instalação |
+|---|---|---|---|
+| **Framework CSS** | Bootstrap | `v5.3.3` | `npm i bootstrap@5.3.3` |
+| **Ícones** | Bootstrap Icons | `v1.11.3` | `npm i bootstrap-icons@1.11.3` |
+| **JavaScript** | ECMAScript | `ES2022 (ES13)` | Nativo no navegador |
+| **Gráficos** | Chart.js | `v4.4.3` | `npm i chart.js@4.4.3` |
+| **API Fake** | JSON Server | `v0.17.4` | `npm i json-server@0.17.4` |
+| **Runtime** | Node.js | `v20.x (LTS)` | [nodejs.org](https://nodejs.org) |
+| **Gerenciador de pacotes** | NPM | `v10.x` | Incluso com Node.js |
+
+### 1.1 APIs Públicas Externas
+
+| API | Versão | Base URL | Autenticação |
+|---|---|---|---|
+| **Mercado Livre API** | `v1` | `https://api.mercadolibre.com` | OAuth 2.0 (Bearer Token) |
+| **Amazon PA API** | `v5.0 (PA API 5.0)` | `https://webservices.amazon.com.br/paapi5` | AWS Signature v4 |
+
+### 1.2 CDN para uso direto no HTML (sem NPM)
+
+```html
+<!-- Bootstrap v5.3.3 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<!-- Bootstrap Icons v1.11.3 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Chart.js v4.4.3 -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+<!-- Bootstrap v5.3.3 JS Bundle (inclui Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmF5wnPY9Td7gJ3+Z5aq4mNqQa3" crossorigin="anonymous"></script>
+```
+
+---
+
+## 2. Modelo de Dados (Diagrama ER)
+
+Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura do `db.json` e como as entidades se relacionam.
 
 ```mermaid
 erDiagram
-    USUARIO ||--o{ PRODUTO : "cadastra"
+    USUARIO ||--o{ PRODUTO_MONITORADO : "monitora"
+    PRODUTO_MONITORADO ||--o{ HISTORICO_PRECO : "registra"
+    PRODUTO_MONITORADO ||--o{ ALERTA : "dispara"
 
     USUARIO {
-        int id_usuario PK
+        string id PK
         string nome
         string email
         string senha
+        string createdAt "Formato ISO 8601"
     }
 
-    PRODUTO {
-        int id_produto PK
-        int id_usuario FK
-        string url_ml
-        string url_amzn
-        string id_link_usuario
-        decimal meta_de_preco
-        decimal preco_ml
-        decimal preco_amzn
+    PRODUTO_MONITORADO {
+        string id PK
+        string usuarioId FK
+        string nome
+        string url "Link original do produto"
+        string fonte "MERCADO_LIVRE | AMAZON"
+        string imagemUrl
+        float precoAlvo "Preço desejado pelo usuário"
+        float precoAtual
+        float precoInicial
+        string status "ATIVO | PAUSADO"
+        string createdAt
+    }
+
+    HISTORICO_PRECO {
+        string id PK
+        string produtoId FK
+        float preco
+        string fonte "MERCADO_LIVRE | AMAZON"
+        string capturedAt "Formato ISO 8601"
+    }
+
+    ALERTA {
+        string id PK
+        string produtoId FK
+        string tipo "QUEDA | FALSA_OFERTA | META_ATINGIDA"
+        float precoAnterior
+        float precoAtual
+        float percentualQueda
+        boolean lido
+        string createdAt
     }
 ```
 
-## 2. Dicionário de Dados
+---
 
-Breve explicação das tabelas principais:
+## 3. Dicionário de Dados
 
-- **usuarios:** armazena os usuários do sistema.
-  - `id_usuario`: identificador único do usuário.
-  - `nome`: nome completo do usuário.
-  - `email`: e-mail de login (único).
-  - `senha`: senha do usuário.
+### `usuarios`
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `id` | String | Gerado automaticamente pelo JSON Server |
+| `nome` | String | Nome completo do usuário |
+| `email` | String | Usado para login — único no sistema |
+| `senha` | String | Em produção, usar hash bcrypt |
+| `createdAt` | String | Data de cadastro no formato `YYYY-MM-DDTHH:mm:ssZ` |
 
-- **produtos:** tabela de produtos cadastrados pelos usuários para monitoramento.
-  - `id_produto`: identificador único do produto.
-  - `id_usuario`: chave estrangeira referenciando o usuário dono do produto.
-  - `url_ml`: link do produto no Mercado Livre.
-  - `url_amzn`: link do produto na Amazon.
-  - `id_link_usuario`: identificador customizado do link (tracking ou afiliado).
-  - `meta_de_preco`: preço alvo definido pelo usuário.
-  - `preco_ml`: preço atual coletado do Mercado Livre.
-  - `preco_amzn`: preço atual coletado da Amazon.
+### `produtosMonitorados`
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `id` | String | Gerado automaticamente |
+| `usuarioId` | String (FK) | Referência ao usuário dono do monitoramento |
+| `nome` | String | Nome do produto |
+| `url` | String | URL original do produto na loja |
+| `fonte` | String | Enum: `"MERCADO_LIVRE"` ou `"AMAZON"` |
+| `imagemUrl` | String | URL da imagem do produto |
+| `precoAlvo` | Float | Preço limite para disparo de alerta |
+| `precoAtual` | Float | Último preço coletado |
+| `precoInicial` | Float | Preço no momento do cadastro |
+| `status` | String | Enum: `"ATIVO"` ou `"PAUSADO"` |
 
-## 3. Rotas da API (JSON Server)
+### `historicosPreco`
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `produtoId` | String (FK) | Chave estrangeira — nomenclatura exigida pelo JSON Server para rotas aninhadas |
+| `preco` | Float | Sempre positivo |
+| `fonte` | String | Loja de origem da coleta |
+| `capturedAt` | String | Timestamp da coleta no formato ISO 8601 |
 
-A aplicação consome uma API simulada via JSON Server. Abaixo os principais endpoints:
+### `alertas`
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `tipo` | String | Enum: `"QUEDA"`, `"FALSA_OFERTA"` ou `"META_ATINGIDA"` |
+| `percentualQueda` | Float | Ex: `15.5` representa queda de 15,5% |
+| `lido` | Boolean | Controla se o Toast Bootstrap já foi exibido |
 
-**Usuários**
-- `GET /usuarios` → Lista todos os usuários
-- `POST /usuarios` → Cria um novo usuário
-- `GET /usuarios?email=...&senha=...` → Autenticação
+---
 
-**Produtos**
-- `GET /produtos` → Lista todos os produtos
-- `GET /produtos?id_usuario=...` → Lista produtos de um usuário
-- `GET /produtos/:id` → Retorna um produto específico
-- `POST /produtos` → Cadastra um novo produto
-- `PATCH /produtos/:id` → Atualiza preços ou meta
-- `DELETE /produtos/:id` → Remove um produto
+## 4. Contratos de API
 
-> **Observação:** No MVP, as ações de atualização de preço, notificação e alertas podem ser feitas localmente no front-end combinando os recursos acima.
+### 4.1 JSON Server (API Fake — porta 3001)
 
-## 4. Exemplo `db.json`
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/usuarios` | Lista todos os usuários |
+| `POST` | `/usuarios` | Cadastra novo usuário |
+| `GET` | `/produtosMonitorados?usuarioId={id}` | Lista produtos de um usuário |
+| `POST` | `/produtosMonitorados` | Adiciona produto ao monitoramento |
+| `PATCH` | `/produtosMonitorados/{id}` | Atualiza preço atual ou status |
+| `DELETE` | `/produtosMonitorados/{id}` | Remove produto do monitoramento |
+| `GET` | `/historicosPreco?produtoId={id}` | Retorna histórico de preços |
+| `POST` | `/historicosPreco` | Registra novo ponto no histórico |
+| `GET` | `/alertas?produtoId={id}&lido=false` | Lista alertas não lidos |
+| `PATCH` | `/alertas/{id}` | Marca alerta como lido |
 
-Este é um exemplo de estrutura do banco de dados simulado. Serve para inicializar o JSON Server e para testes iniciais.
+### 4.2 Mercado Livre API v1
+
+**Autenticação:** Bearer Token via OAuth 2.0
+
+```
+GET https://api.mercadolibre.com/sites/MLB/search?q={query}&limit=10
+Authorization: Bearer {ACCESS_TOKEN}
+```
+
+**Campos relevantes do response:**
+```json
+{
+  "results": [{
+    "id": "MLB123456",
+    "title": "Nome do Produto",
+    "price": 299.90,
+    "original_price": 399.90,
+    "thumbnail": "https://...",
+    "permalink": "https://www.mercadolivre.com.br/...",
+    "seller": { "nickname": "LOJA_EXEMPLO" }
+  }]
+}
+```
+
+**Regra de negócio:** Se `original_price` existir e for maior que `price`, calcular `percentualQueda = ((original_price - price) / original_price) * 100`. Se `percentualQueda > 30%`, classificar como suspeita de **falsa oferta**.
+
+### 4.3 Amazon PA API v5.0
+
+**Autenticação:** AWS Signature v4 (Header-based)
+
+```
+POST https://webservices.amazon.com.br/paapi5/searchitems
+Content-Type: application/json; charset=utf-8
+X-Amz-Target: com.amazon.paapi5.v1.ProductAdvertisingAPIv1.SearchItems
+```
+
+**Payload da requisição:**
+```json
+{
+  "PartnerTag": "{SEU_PARTNER_TAG}",
+  "PartnerType": "Associates",
+  "Keywords": "{query}",
+  "SearchIndex": "All",
+  "Resources": [
+    "ItemInfo.Title",
+    "Offers.Listings.Price",
+    "Images.Primary.Medium"
+  ]
+}
+```
+
+---
+
+## 5. Estrutura do Banco de Dados (db.json)
+
+Esta estrutura inicializa a API Fake com dados de exemplo. Ferramentas de IA devem usar este schema como referência para geração de código.
 
 ```json
 {
   "usuarios": [
     {
-      "id_usuario": 1,
-      "nome": "Ana Souza",
-      "email": "ana@exemplo.com",
-      "senha": "senha_mock"
+      "id": "1",
+      "nome": "Augusto Emanuel",
+      "email": "augusto@email.com",
+      "senha": "senha123",
+      "createdAt": "2026-01-10T08:00:00Z"
     }
   ],
-  "produtos": [
+  "produtosMonitorados": [
     {
-      "id_produto": 1,
-      "id_usuario": 1,
-      "url_ml": "https://mercadolivre.com/prod/123",
-      "url_amzn": "https://amazon.com/prod/123",
-      "id_link_usuario": "ref_ana_001",
-      "meta_de_preco": 150.00,
-      "preco_ml": 199.90,
-      "preco_amzn": 189.90
+      "id": "1",
+      "usuarioId": "1",
+      "nome": "Notebook Lenovo IdeaPad 3",
+      "url": "https://www.mercadolivre.com.br/...",
+      "fonte": "MERCADO_LIVRE",
+      "imagemUrl": "https://http2.mlstatic.com/...",
+      "precoAlvo": 2500.00,
+      "precoAtual": 2799.90,
+      "precoInicial": 3199.90,
+      "status": "ATIVO",
+      "createdAt": "2026-04-01T10:00:00Z"
+    }
+  ],
+  "historicosPreco": [
+    {
+      "id": "1",
+      "produtoId": "1",
+      "preco": 3199.90,
+      "fonte": "MERCADO_LIVRE",
+      "capturedAt": "2026-04-01T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "produtoId": "1",
+      "preco": 2799.90,
+      "fonte": "MERCADO_LIVRE",
+      "capturedAt": "2026-04-06T10:00:00Z"
+    }
+  ],
+  "alertas": [
+    {
+      "id": "1",
+      "produtoId": "1",
+      "tipo": "QUEDA",
+      "precoAnterior": 3199.90,
+      "precoAtual": 2799.90,
+      "percentualQueda": 12.5,
+      "lido": false,
+      "createdAt": "2026-04-06T10:00:00Z"
     }
   ]
 }
 ```
 
-## 5. Fluxo de Dados e Regras de Negócio
+---
 
-1. Usuário realiza cadastro/login.
-2. Usuário cadastra um produto informando URLs e preço alvo.
-3. Sistema armazena o produto vinculado ao usuário.
-4. Um processo (manual ou automatizado) atualiza `preco_ml` e `preco_amzn`.
-5. O front-end compara `preco_ml` ou `preco_amzn` com `meta_de_preco`.
-6. Caso o preço atual seja menor ou igual à meta, o sistema pode:
-   - Exibir alerta visual
-   - Destacar o produto na interface
+## 6. Padrões de Código — Referência para IA
 
-## 6. Considerações para Implementação
+### Bootstrap 5.3.3 — Classes obrigatórias no projeto
 
-- **Autenticação simples via:**
-  - `GET /usuarios?email=...&senha=...`
-  - Persistência do usuário via `localStorage`
+```html
+<!-- Card de produto -->
+<div class="card h-100 shadow-sm border-0">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title fs-6 fw-semibold">Nome do Produto</h5>
+    <p class="card-text text-success fw-bold fs-5">R$ 299,90</p>
+    <span class="badge bg-danger">↓ 12% de queda</span>
+  </div>
+</div>
 
-- **Atualização de preços:**
-  - Atualizar via `PATCH /produtos/:id`
-  - Pode ser feito por script manual ou simulação no front-end
+<!-- Toast de alerta (Bootstrap 5.3.3) -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="alertToast" class="toast align-items-center text-bg-success border-0" role="alert">
+    <div class="d-flex">
+      <div class="toast-body">
+        <i class="bi bi-bell-fill me-2"></i> Preço atingiu sua meta!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
 
-- **Monitoramento de preço — lógica no front-end:**
+<!-- Ativar Toast via JS (Bootstrap 5.3.3) -->
+<script>
+  const toastEl = document.getElementById('alertToast');
+  const toast = new bootstrap.Toast(toastEl, { delay: 5000 });
+  toast.show();
+</script>
+```
 
-```js
-if (preco_ml <= meta_de_preco || preco_amzn <= meta_de_preco) {
-  // disparar alerta
+### Fetch para Mercado Livre API v1
+
+```javascript
+async function buscarProdutoML(query, accessToken) {
+  const url = `https://api.mercadolibre.com/sites/MLB/search?q=${encodeURIComponent(query)}&limit=10`;
+  const response = await fetch(url, {
+    headers: { 'Authorization': `Bearer ${accessToken}` }
+  });
+  if (!response.ok) throw new Error(`ML API Error: ${response.status}`);
+  const data = await response.json();
+  return data.results;
 }
 ```
 
-## 7. Testes e Qualidade
+### Chart.js v4.4.3 — Gráfico de histórico de preços
 
-- Testar cadastro e login de usuários
-- Testar CRUD de produtos
-- Validar vínculo correto entre usuário e produto
-- Testar atualização de preços
-- Testar comparação com meta de preço
-- Testar responsividade da interface
-
----
-
-**Última atualização:** Abril de 2026
-**Versão:** 2.0
-**Status:** Atualizado conforme novo modelo ER
+```javascript
+const ctx = document.getElementById('precoChart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['01/04', '03/04', '06/04'],
+    datasets: [{
+      label: 'Histórico de Preço (R$)',
+      data: [3199.90, 2999.90, 2799.90],
+      borderColor: '#0d6efd',
+      backgroundColor: 'rgba(13, 110, 253, 0.1)',
+      fill: true,
+      tension: 0.4
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'top' } }
+  }
+});
+```
