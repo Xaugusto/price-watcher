@@ -1,0 +1,27 @@
+{
+  "name": "pricewatcher",
+  "version": "1.0.0",
+  "description": "Este projeto tem como objetivo implementar uma aplicação web que permite aos usuários monitorar produtos em diferentes lojas online e receber notificações quando houver queda de preço.",
+  "homepage": "https://github.com/Xaugusto/PriceWatcher#readme",
+  "bugs": {
+    "url": "https://github.com/Xaugusto/PriceWatcher/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xaugusto/PriceWatcher.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "uuid": "^13.0.0"
+  }
+}

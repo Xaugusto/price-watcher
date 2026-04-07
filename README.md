@@ -1,3 +1,4 @@
+
 # price-watcher
 
 ### **Autor:** Augusto Emanuel Pereira
@@ -108,3 +109,93 @@ O **Bootstrap** foi escolhido como framework CSS após análise comparativa com 
 - 🛒 Comparação entre lojas (Mercado Livre vs Amazon)
 - ⭐ Lista de desejos
 - 🚨 Detecção de falsas promoções
+
+---
+
+## ✅ Checklist | Indicadores de Desempenho (ID)
+
+#### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
+
+- [ ] ID 01 - Prototipar interfaces responsivas (mobile e desktop)
+- [ ] ID 02 - Implementar layout com Bootstrap 5
+- [ ] ID 03 - Utilizar Flexbox ou Grid
+- [ ] ID 04 - Utilizar componentes prontos (cards, modais, botões, toasts)
+- [ ] ID 05 - Usar unidades relativas (% , rem, vh, vw)
+- [ ] ID 06 - Aplicar Design System consistente
+
+---
+
+#### RA2 - Tratamento de formulários
+
+- [ ] ID 07 - Validação de campos obrigatórios
+- [ ] ID 08 - Validações com REGEX
+- [ ] ID 09 - Uso de inputs (checkbox, select, etc.)
+- [ ] ID 10 - Uso de localStorage
+
+---
+
+#### RA3 - Otimização do desenvolvimento
+
+- [ ] ID 11 - Uso de Node.js e NPM
+- [ ] ID 12 - Versionamento com Git
+- [ ] ID 13 - README padronizado
+- [ ] ID 14 - Organização modular de arquivos
+
+---
+
+#### RA4 - Interatividade com JavaScript
+
+- [ ] ID 15 - Manipulação do DOM
+- [ ] ID 16 - Eventos e animações
+
+---
+
+#### RA5 - Requisições assíncronas
+
+- [ ] ID 17 - Requisições para API Fake (JSON Server)
+- [ ] ID 18 - Exibição dinâmica de dados
+- [ ] ID 19 - Integração com APIs externas (Mercado Livre e Amazon)
+
+---
+
+## 🚀 Manual de execução
+
+**Clonar o repositório:**
+```bash
+git clone https://github.com/seu-usuario/price-watcher.git
+cd price-watcher
+```
+
+**Instalar dependências:**
+```bash
+npm install
+```
+
+**Iniciar o JSON Server (API Fake):**
+```bash
+npx json-server --watch db.json --port 3001
+```
+
+**Abrir o projeto:**
+```bash
+# Abra o arquivo index.html no navegador ou use Live Server (VS Code)
+```
+
+---
+
+## 🔑 Variáveis de Ambiente
+
+Crie um arquivo `.env` na raiz do projeto com suas credenciais:
+
+```env
+# Mercado Livre
+ML_CLIENT_ID=seu_client_id
+ML_CLIENT_SECRET=seu_client_secret
+
+# Amazon PA API
+AMAZON_ACCESS_KEY=sua_access_key
+AMAZON_SECRET_KEY=sua_secret_key
+AMAZON_PARTNER_TAG=seu_partner_tag
+```
+
+> ⚠️ Nunca suba o arquivo `.env` para o repositório. Ele já está listado no `.gitignore`.
