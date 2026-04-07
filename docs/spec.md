@@ -1,169 +1,104 @@
-# 🛠️ Especificação Técnica (Tech Spec) - PriceWatcher
+🛠️ Especificação Técnica (Tech Spec) - PriceWatcher
 
 Este documento detalha a arquitetura técnica, o modelo de dados e os contratos de API simulada (via JSON Server) necessários para o funcionamento do sistema PriceWatcher.
 
-## 1. Modelo de Dados (Diagrama ER)
+1. Modelo de Dados (Diagrama ER)
 
-Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura do nosso "banco de dados" (`db.json`) e como as informações se conectam.
+Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura do nosso "banco de dados" (db.json) e como as informações se conectam.
 
-```mermaid
-erDiagram
-    USUARIO ||--o{ PRODUTO : "cadastra"
-    
-    USUARIO {
-        int id_usuario PK
-        string nome
-        string email
-        string senha
-    }
+2. Dicionário de Dados
+usuarios
 
-    PRODUTO {
-        int id_produto PK
-        int id_usuario FK
-        string url_ml
-        string url_amzn
-        string id_link_usuario
-        decimal meta_de_preco
-        decimal preco_ml
-        decimal preco_amzn
-    }
-```
+Tabela responsável por armazenar os usuários do sistema.
 
-## 2. Dicionário de Dados
+id_usuario: identificador único do usuário.
+nome: nome completo do usuário.
+email: e-mail de login (único).
+senha: senha do usuário.
+produtos
 
-Breve explicação das tabelas principais:
+Tabela de produtos cadastrados pelos usuários para monitoramento.
 
-- **usuarios:** cadastra as contas de login.
-  - id: identificador único gerado pelo JSON Server.
-  - email: chave de acesso do usuário (única via validação de front-end/back-end).
-  - senha: armazenada no front-end de forma segura (hash se houver backend real).
+id_produto: identificador único do produto.
+id_usuario: chave estrangeira referenciando o usuário dono do produto.
+url_ml: link do produto no Mercado Livre.
+url_amzn: link do produto na Amazon.
+id_link_usuario: identificador customizado do link (tracking ou afiliado).
+meta_de_preco: preço alvo definido pelo usuário.
+preco_ml: preço atual coletado do Mercado Livre.
+preco_amzn: preço atual coletado da Amazon.
+3. Rotas da API (JSON Server)
 
-- **produtos:** catálogo de produtos monitoráveis.
-  - preco_atual: última cotação disponível.
-  - url: link direto para o produto na loja.
-  - loja: nome do marketplace.
+A aplicação consome uma API simulada via JSON Server.
 
-- **produto_monitorado:** relação entre usuário e produto selecionado para monitoramento.
-  - usuarioId: chave estrangeira para a coleção `usuarios`.
-  - produtoId: chave estrangeira para a coleção `produtos`.
-  - preco_alvo: preço máximo definido pelo usuário para notificação.
-  - ativo: indica se o monitoramento está ativo.
-
-- **precos:** histórico temporal de preços do produto.
-  - produtoId: chave estrangeira para a coleção `produtos`.
-  - preco: valor da cotação em determinada data.
-  - data: marcação para geração do gráfico.
-
-## 3. Rotas da API (JSON Server)
-
-A aplicação consome a API local simulada pelo JSON Server. Abaixo os principais endpoints:
-
-- `GET /usuarios` - Retorna a lista de usuários.
-- `POST /usuarios` - Cadastra um novo usuário.
-- `GET /usuarios?email=...` - Autenticação (validação de credenciais).
-- `GET /produtos` - Retorna lista de todos os produtos monitoráveis.
-- `GET /produtos/:id` - Retorna dados de um produto específico.
-- `POST /produtos` - Cria um produto (se houver backend de scraping).
-- `GET /produto_monitorado?usuarioId=...` - Retorna produtos monitorados por usuário.
-- `POST /produto_monitorado` - Adiciona um produto ao monitoramento.
-- `PATCH /produto_monitorado/:id` - Atualiza preço-alvo ou ativa/desativa monitoramento.
-- `DELETE /produto_monitorado/:id` - Remove produto do monitoramento.
-- `GET /precos?produtoId=...` - Retorna histórico de preços por produto.
-- `POST /precos` - Insere nova cotação de preço.
-
-> Observação: No MVP, as ações de atualização de preço, notificação e gráfico podem ser feitas localmente no front-end combinando os recursos acima.
-
-## 4. Exemplo `db.json`
-
-Este é um exemplo de estrutura do banco de dados simulado. Sirve para inicializar o JSON Server e para testes iniciais.
-
-```json
+Usuários
+GET /usuarios → Lista todos os usuários
+POST /usuarios → Cria um novo usuário
+GET /usuarios?email=...&senha=... → Autenticação
+Produtos
+GET /produtos → Lista todos os produtos
+GET /produtos?id_usuario=... → Lista produtos de um usuário
+GET /produtos/:id → Retorna um produto específico
+POST /produtos → Cadastra um novo produto
+PATCH /produtos/:id → Atualiza preços ou meta
+DELETE /produtos/:id → Remove um produto
+4. Exemplo db.json
 {
   "usuarios": [
     {
-      "id": "1",
+      "id_usuario": 1,
       "nome": "Ana Souza",
       "email": "ana@exemplo.com",
-      "senha": "senha_mock",
-      "createdAt": "2026-03-23T14:00:00Z"
+      "senha": "senha_mock"
     }
   ],
   "produtos": [
     {
-      "id": "1",
-      "nome": "Fone de Ouvido Bluetooth",
-      "url": "https://lojax.com/prod/123",
-      "loja": "Lojax",
-      "sku": "ABC123",
-      "preco_atual": 199.90,
-      "imagem": "https://lojax.com/prod/123/image.jpg"
-    }
-  ],
-  "produto_monitorado": [
-    {
-      "id": "1",
-      "usuarioId": "1",
-      "produtoId": "1",
-      "preco_alvo": 149.99,
-      "ativo": true
-    }
-  ],
-  "precos": [
-    {
-      "id": "1",
-      "produtoId": "1",
-      "preco": 219.90,
-      "data": "2026-03-01"
-    },
-    {
-      "id": "2",
-      "produtoId": "1",
-      "preco": 205.00,
-      "data": "2026-03-10"
-    },
-    {
-      "id": "3",
-      "produtoId": "1",
-      "preco": 199.90,
-      "data": "2026-03-23"
+      "id_produto": 1,
+      "id_usuario": 1,
+      "url_ml": "https://mercadolivre.com/prod/123",
+      "url_amzn": "https://amazon.com/prod/123",
+      "id_link_usuario": "ref_ana_001",
+      "meta_de_preco": 150.00,
+      "preco_ml": 199.90,
+      "preco_amzn": 189.90
     }
   ]
 }
-```
+5. Fluxo de Dados e Regras de Negócio
+Usuário realiza cadastro/login.
+Usuário cadastra um produto informando URLs e preço alvo.
+Sistema armazena o produto vinculado ao usuário.
+Um processo (manual ou automatizado) atualiza preco_ml e preco_amzn.
+O front-end compara:
+preco_ml ou preco_amzn com meta_de_preco
+Caso o preço atual seja menor ou igual à meta, o sistema pode:
+Exibir alerta
+Destacar produto
+6. Considerações para Implementação
+Autenticação
+Simples via:
+GET /usuarios?email=...&senha=...
+Persistência via localStorage
+Atualização de preços
+Atualizar via:
+PATCH /produtos/:id
+Pode ser feito por:
+Script manual
+Simulação no front-end
+Monitoramento de preço
+Lógica feita no front-end:
+if (preco_ml <= meta_de_preco || preco_amzn <= meta_de_preco) {
+  // disparar alerta
+}
+7. Testes e Qualidade
+Testar cadastro e login de usuários
+Testar CRUD de produtos
+Validar vínculo correto entre usuário e produto
+Testar atualização de preços
+Testar comparação com meta de preço
+Testar responsividade da interface
 
-## 5. Fluxo de Dados e Regras de Negócio
-
-1. Usuário faz login com email/senha.
-2. Busca produtos ou acessa painel de monitoramento.
-3. Adiciona produto ao monitoramento com um `preco_alvo`.
-4. Serviço agendado/ataque simulado (MVP manual) atualiza a tabela `precos` periodicamente.
-5. Na leitura da lista de produtos monitorados, o front-end calcula o status e dispara alertas quando `preco_atual <= preco_alvo`.
-6. Dados históricos são plotados a partir das entradas de `precos`.
-
-## 6. Considerações para Implementação
-
-- Autenticação:
-  - No MVP, método simples com `GET /usuarios?email=...&senha=...`.
-  - Persistência do usuário via `localStorage` ou `sessionStorage`.
-
-- Atualização de `preco_atual`:
-  - Pode ser feita com `PATCH /produtos/:id` após ingestão de novo valor.
-  - Sempre criar novo registro em `precos` para histórico.
-
-- Notificação de preço-alvo:
-  - Pode ser calculada no cliente (comparação entre produto e preço alvo).
-  - Salvar último estado de alerta para evitar repetição.
-
-## 7. Testes e Qualidade
-
-- Testar rota de cadastro e login com diversas combinações de e-mail/senha.
-- Testar criação e exclusão de `produto_monitorado`.
-- Validar histórico de preços e geração de gráfico.
-- Testar UX responsivo (mobile/tablet/desktop).
-- Testar comportamento quando não há internet (modo offline parcial + dados em localStorage).
-
----
-
-**Última atualização:** Março de 2026  
-**Versão:** 1.0  
-**Status:** Em desenvolvimento
+Última atualização: Abril de 2026
+Versão: 2.0
+Status: Atualizado conforme novo modelo ER
