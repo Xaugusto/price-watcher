@@ -38,65 +38,57 @@ https://seu-usuario.github.io/price-watcher/
 - **Frontend:**
   - HTML5
   - CSS3
-  - **Bootstrap 5.3** *(Framework CSS escolhido — veja justificativa abaixo)*
+  - **Bootstrap 5.3.3** *(Framework CSS escolhido — veja justificativa abaixo)*
   - JavaScript (ES6+)
 
 - **Backend (simulado):**
-  - JSON Server
+  - JSON Server `v0.17.4`
 
 - **APIs Públicas Integradas:**
-  - **Mercado Livre API** *(veja justificativa abaixo)*
-  - **Amazon Product Advertising API (PA API 5.0)** *(veja justificativa abaixo)*
+  - **Mercado Livre API v1**
+  - **Amazon Product Advertising API v5.0 (PA API 5.0)**
 
 - **Bibliotecas:**
-  - Chart.js (para gráficos de histórico de preço)
+  - jQuery `v3.7.1`
+  - Chart.js `v4.4.3` (para gráficos de histórico de preço)
+  - Bootstrap Icons `v1.11.3`
 
 ---
 
 ## 🧠 Justificativa das Escolhas Técnicas
 
-### 🎨 Framework CSS — Bootstrap 5.3
+### 🎨 Framework CSS — Bootstrap 5.3.3
 
 O **Bootstrap** foi escolhido como framework CSS após análise comparativa com alternativas como Tailwind CSS e Materialize CSS, com base nos seguintes critérios:
 
-| Critério | Bootstrap 5.3 | Tailwind CSS | Materialize CSS |
-|---|---|---|------|
+| Critério | Bootstrap 5.3.3 | Tailwind CSS | Materialize CSS |
+|---|---|---|---|
 | ⭐ Stars no GitHub | ~170k | ~82k | ~39k |
-| 📦 Componentes prontos | ✅ Cards, Modais, Navbars, Badges | ❌ Utility-first | ✅ Limitados |
-| 📱 Responsividade | ✅ Sistema de grid 12 colunas | ✅ | ✅ |
+| 📦 Componentes prontos | ✅ Cards, Modais, Toasts | ❌ Utility-first | ✅ Limitados |
+| 📱 Responsividade | ✅ Grid 12 colunas | ✅ | ✅ |
 | 📅 Manutenção ativa | ✅ Atualizações frequentes | ✅ | ⚠️ Lento |
 | 📖 Documentação | ✅ Extensa e em PT-BR | ✅ | ✅ |
 
 **Por que Bootstrap para o Price Watcher?**
 - O sistema de **grid responsivo de 12 colunas** garante que os cards de produtos se adaptem perfeitamente a dispositivos móveis e desktops, atendendo diretamente ao **ID 01 e ID 02**.
-- Componentes prontos como **Cards**, **Modais**, **Badges de preço** e **Toasts de notificação** aceleram o desenvolvimento e reduzem código CSS customizado (**ID 04**).
+- Componentes prontos como **Cards**, **Modais**, **Badges de preço** e **Toasts de notificação** aceleram o desenvolvimento (**ID 04**).
 - O Bootstrap 5 não depende de jQuery, tornando o projeto mais leve e moderno.
-- Amplamente utilizado no mercado, demonstrando domínio de uma tecnologia relevante para recrutadores.
 
 ---
 
 ### 🔌 APIs Públicas — Mercado Livre & Amazon
 
-#### 🛒 Mercado Livre API
+#### 🛒 Mercado Livre API v1
 - **Documentação:** [developers.mercadolibre.com.br](https://developers.mercadolibre.com.br)
 - **Autenticação:** OAuth 2.0 (token de acesso gratuito)
-- **Endpoint principal utilizado:**
-  ```
-  GET https://api.mercadolibre.com/sites/MLB/search?q={produto}
-  ```
 
-**Por que o Mercado Livre?**
-> O Mercado Livre é a maior plataforma de e-commerce da América Latina, com milhões de produtos cadastrados. Sua API pública é gratuita, bem documentada, retorna dados em JSON estruturado com preço, histórico, avaliações e URLs de produtos — exatamente o que o Price Watcher precisa para monitorar e comparar preços em tempo real. A API atende diretamente aos **IDs 17, 18 e 19** do checklist.
+> O Mercado Livre é a maior plataforma de e-commerce da América Latina. Sua API pública é gratuita, bem documentada e retorna dados em JSON com preço, histórico e URLs — ideal para monitoramento de preços em tempo real (**IDs 17, 18 e 19**).
 
----
-
-#### 📦 Amazon Product Advertising API (PA API 5.0)
+#### 📦 Amazon PA API v5.0
 - **Documentação:** [webservices.amazon.com/paapi5](https://webservices.amazon.com/paapi5/documentation/)
-- **Autenticação:** AWS Signature v4 (requer cadastro no Amazon Associates)
-- **Operação principal utilizada:** `SearchItems` e `GetItems`
+- **Autenticação:** AWS Signature v4
 
-**Por que a Amazon?**
-> A Amazon é referência global em e-commerce e possui um dos maiores catálogos de produtos do mundo. Integrar sua API permite comparar preços entre o mercado nacional (Mercado Livre) e internacional (Amazon), enriquecendo a funcionalidade de **Comparação entre Lojas** do sistema. Além disso, os dados retornados incluem preço, variações, imagens de alta qualidade e URL do produto — agregando valor real à experiência do usuário e demonstrando capacidade de consumir APIs com autenticação mais robusta (AWS Signature v4).
+> Integrar a Amazon permite comparar preços entre o mercado nacional e internacional, enriquecendo a funcionalidade de **Comparação entre Lojas** do sistema.
 
 ---
 
@@ -116,8 +108,10 @@ O **Bootstrap** foi escolhido como framework CSS após análise comparativa com 
 
 #### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
 
-- [ ] ID 01 - Prototipar interfaces responsivas (mobile e desktop)
-- [ ] ID 02 - Implementar layout com Bootstrap 5
+- [x] ID 01 - Prototipar interfaces responsivas (mobile e desktop)
+  > ✔️ Protótipo criado no **Stitch** com telas de Home, Lista de Produtos, Detalhes e Alertas — versões mobile e desktop. [Ver protótipo](https://stitch.withgoogle.com/projects/1963391761961224150)
+- [x] ID 02 - Implementar layout com Bootstrap 5
+  > ✔️ **Bootstrap v5.3.3** instalado via NPM (`npm install bootstrap@5.3.3`). Integrado ao projeto como dependência oficial no `package.json`.
 - [ ] ID 03 - Utilizar Flexbox ou Grid
 - [ ] ID 04 - Utilizar componentes prontos (cards, modais, botões, toasts)
 - [ ] ID 05 - Usar unidades relativas (% , rem, vh, vw)
@@ -136,9 +130,12 @@ O **Bootstrap** foi escolhido como framework CSS após análise comparativa com 
 
 #### RA3 - Otimização do desenvolvimento
 
-- [ ] ID 11 - Uso de Node.js e NPM
-- [ ] ID 12 - Versionamento com Git
-- [ ] ID 13 - README padronizado
+- [x] ID 11 - Uso de Node.js e NPM
+  > ✔️ Ambiente criado com **Node.js v20.x (LTS)**. Dependências instaladas via NPM: `bootstrap@5.3.3`, `jquery@3.7.1`, `chart.js@4.4.3`, `bootstrap-icons@1.11.3`, `json-server@0.17.4`. Arquivo `package.json` gerado e versionado.
+- [x] ID 12 - Versionamento com Git
+  > ✔️ Repositório inicializado com `git init`. `.gitignore` configurado (node_modules, .env). Commits realizados com mensagens descritivas.
+- [x] ID 13 - README padronizado
+  > ✔️ README com seções de apresentação, tecnologias com justificativas, design, checklist e manual de execução.
 - [ ] ID 14 - Organização modular de arquivos
 
 ---
@@ -171,6 +168,13 @@ cd price-watcher
 npm install
 ```
 
+> As seguintes dependências serão instaladas automaticamente:
+> - `bootstrap@5.3.3`
+> - `bootstrap-icons@1.11.3`
+> - `jquery@3.7.1`
+> - `chart.js@4.4.3`
+> - `json-server@0.17.4`
+
 **Iniciar o JSON Server (API Fake):**
 ```bash
 npx json-server --watch db.json --port 3001
@@ -178,7 +182,7 @@ npx json-server --watch db.json --port 3001
 
 **Abrir o projeto:**
 ```bash
-# Abra o arquivo index.html no navegador ou use Live Server (VS Code)
+# Abra o index.html no navegador ou use a extensão Live Server (VS Code)
 ```
 
 ---
