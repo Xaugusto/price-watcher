@@ -3,6 +3,51 @@
 
 Este documento detalha a arquitetura técnica, o modelo de dados e os contratos de API simulada (via JSON Server) necessários para o funcionamento do sistema PriceWatcher.
 
+---
+
+## 0. Stack de Tecnologias e Versões Exatas
+
+> ⚠️ **Instrução para desenvolvedores e agentes de IA:** utilize **exatamente** as versões listadas abaixo. Não atualize dependências sem revisão explícita, pois mudanças de versão podem quebrar compatibilidade entre os módulos do projeto.
+
+### 🌐 Frontend
+
+| Tecnologia | Versão | Forma de uso |
+|---|---|---|
+| HTML | 5 | Markup semântico |
+| CSS | 3 | Estilização base + customizações |
+| JavaScript | ES6+ | Lógica de negócio e DOM |
+| Bootstrap | **5.3.3** | Framework CSS — `npm install bootstrap@5.3.3` |
+| Bootstrap Icons | **1.11.3** | Ícones — `npm install bootstrap-icons@1.11.3` |
+| jQuery | **3.7.1** | Utilitários DOM — `npm install jquery@3.7.1` |
+| Chart.js | **4.4.3** | Gráficos de histórico de preço — `npm install chart.js@4.4.3` |
+
+### ⚙️ Backend Simulado (API Fake)
+
+| Tecnologia | Versão | Comando de inicialização |
+|---|---|---|
+| Node.js | **v20.x (LTS)** | Ambiente de execução |
+| npm | Incluído no Node.js v20.x | Gerenciador de pacotes |
+| JSON Server | **0.17.4** | `npm install json-server@0.17.4` |
+
+> **Iniciar o servidor:** `npx json-server --watch db.json --port 3001`
+
+### 🔌 APIs Públicas Externas
+
+| API | Versão | Autenticação |
+|---|---|---|
+| Mercado Livre API | **v1** | OAuth 2.0 (token gratuito) |
+| Amazon Product Advertising API (PA API) | **v5.0** | AWS Signature v4 |
+
+### 🧰 Ferramentas de Desenvolvimento
+
+| Ferramenta | Versão / Observação |
+|---|---|
+| Git | Qualquer versão estável |
+| VS Code (recomendado) | — |
+| Extensão Live Server (VS Code) | Para servir o `index.html` localmente |
+
+---
+
 ## 1. Modelo de Dados (Diagrama ER)
 
 Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura do nosso "banco de dados" (`db.json`) e como as informações se conectam.
@@ -30,6 +75,8 @@ erDiagram
     }
 ```
 
+---
+
 ## 2. Dicionário de Dados
 
 Breve explicação das tabelas principais:
@@ -50,6 +97,8 @@ Breve explicação das tabelas principais:
   - `preco_ml`: preço atual coletado do Mercado Livre.
   - `preco_amzn`: preço atual coletado da Amazon.
 
+---
+
 ## 3. Rotas da API (JSON Server)
 
 A aplicação consome uma API simulada via JSON Server. Abaixo os principais endpoints:
@@ -68,6 +117,8 @@ A aplicação consome uma API simulada via JSON Server. Abaixo os principais end
 - `DELETE /produtos/:id` → Remove um produto
 
 > **Observação:** No MVP, as ações de atualização de preço, notificação e alertas podem ser feitas localmente no front-end combinando os recursos acima.
+
+---
 
 ## 4. Exemplo `db.json`
 
@@ -98,6 +149,8 @@ Este é um exemplo de estrutura do banco de dados simulado. Serve para inicializ
 }
 ```
 
+---
+
 ## 5. Fluxo de Dados e Regras de Negócio
 
 1. Usuário realiza cadastro/login.
@@ -106,8 +159,10 @@ Este é um exemplo de estrutura do banco de dados simulado. Serve para inicializ
 4. Um processo (manual ou automatizado) atualiza `preco_ml` e `preco_amzn`.
 5. O front-end compara `preco_ml` ou `preco_amzn` com `meta_de_preco`.
 6. Caso o preço atual seja menor ou igual à meta, o sistema pode:
-   - Exibir alerta visual
+   - Exibir alerta visual (Bootstrap Toast)
    - Destacar o produto na interface
+
+---
 
 ## 6. Considerações para Implementação
 
@@ -123,9 +178,15 @@ Este é um exemplo de estrutura do banco de dados simulado. Serve para inicializ
 
 ```js
 if (preco_ml <= meta_de_preco || preco_amzn <= meta_de_preco) {
-  // disparar alerta
+  // disparar alerta (Bootstrap Toast)
 }
 ```
+
+- **Gráficos de histórico:** usar **Chart.js v4.4.3** com dados mock ou histórico salvo no `db.json`.
+
+- **Ícones:** usar exclusivamente **Bootstrap Icons v1.11.3** para consistência visual com o Design System.
+
+---
 
 ## 7. Testes e Qualidade
 
@@ -134,10 +195,10 @@ if (preco_ml <= meta_de_preco || preco_amzn <= meta_de_preco) {
 - Validar vínculo correto entre usuário e produto
 - Testar atualização de preços
 - Testar comparação com meta de preço
-- Testar responsividade da interface
+- Testar responsividade da interface (mobile e desktop)
 
 ---
 
 **Última atualização:** Abril de 2026
-**Versão:** 2.0
-**Status:** Atualizado conforme novo modelo ER
+**Versão:** 2.1
+**Status:** Atualizado com versões exatas das tecnologias (Seção 0)
