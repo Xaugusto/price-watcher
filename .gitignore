@@ -2,3 +2,5 @@
 /node_modules
 # Ignora o arquivo package-lock.json 
 /package-lock.json
+# Ignora telas do stitch
+/telas_titch
