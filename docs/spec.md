@@ -11,39 +11,39 @@ Este documento detalha a arquitetura técnica, o modelo de dados e os contratos 
 
 ### 🌐 Frontend
 
-| Tecnologia | Versão | Forma de uso |
-|---|---|---|
-| HTML | 5 | Markup semântico |
-| CSS | 3 | Estilização base + customizações |
-| JavaScript | ES6+ | Lógica de negócio e DOM |
-| Bootstrap | **5.3.3** | Framework CSS — `npm install bootstrap@5.3.3` |
-| Bootstrap Icons | **1.11.3** | Ícones — `npm install bootstrap-icons@1.11.3` |
-| jQuery | **3.7.1** | Utilitários DOM — `npm install jquery@3.7.1` |
-| Chart.js | **4.4.3** | Gráficos de histórico de preço — `npm install chart.js@4.4.3` |
+| Tecnologia      | Versão     | Forma de uso                                                  |
+| --------------- | ---------- | ------------------------------------------------------------- |
+| HTML            | 5          | Markup semântico                                              |
+| CSS             | 3          | Estilização base + customizações                              |
+| JavaScript      | ES6+       | Lógica de negócio e DOM                                       |
+| Bootstrap       | **5.3.3**  | Framework CSS — `npm install bootstrap@5.3.3`                 |
+| Bootstrap Icons | **1.11.3** | Ícones — `npm install bootstrap-icons@1.11.3`                 |
+| jQuery          | **3.7.1**  | Utilitários DOM — `npm install jquery@3.7.1`                  |
+| Chart.js        | **4.4.3**  | Gráficos de histórico de preço — `npm install chart.js@4.4.3` |
 
 ### ⚙️ Backend Simulado (API Fake)
 
-| Tecnologia | Versão | Comando de inicialização |
-|---|---|---|
-| Node.js | **v20.x (LTS)** | Ambiente de execução |
-| npm | Incluído no Node.js v20.x | Gerenciador de pacotes |
-| JSON Server | **0.17.4** | `npm install json-server@0.17.4` |
+| Tecnologia  | Versão                    | Comando de inicialização         |
+| ----------- | ------------------------- | -------------------------------- |
+| Node.js     | **v20.x (LTS)**           | Ambiente de execução             |
+| npm         | Incluído no Node.js v20.x | Gerenciador de pacotes           |
+| JSON Server | **0.17.4**                | `npm install json-server@0.17.4` |
 
 > **Iniciar o servidor:** `npx json-server --watch db.json --port 3001`
 
 ### 🔌 APIs Públicas Externas
 
-| API | Versão | Autenticação |
-|---|---|---|
-| Mercado Livre API | **v1** | OAuth 2.0 (token gratuito) |
-| Amazon Product Advertising API (PA API) | **v5.0** | AWS Signature v4 |
+| API                                     | Versão   | Autenticação               |
+| --------------------------------------- | -------- | -------------------------- |
+| Mercado Livre API                       | **v1**   | OAuth 2.0 (token gratuito) |
+| Amazon Product Advertising API (PA API) | **v5.0** | AWS Signature v4           |
 
 ### 🧰 Ferramentas de Desenvolvimento
 
-| Ferramenta | Versão / Observação |
-|---|---|
-| Git | Qualquer versão estável |
-| VS Code (recomendado) | — |
+| Ferramenta                     | Versão / Observação                   |
+| ------------------------------ | ------------------------------------- |
+| Git                            | Qualquer versão estável               |
+| VS Code (recomendado)          | —                                     |
 | Extensão Live Server (VS Code) | Para servir o `index.html` localmente |
 
 ---
@@ -199,6 +199,17 @@ if (preco_ml <= meta_de_preco || preco_amzn <= meta_de_preco) {
 
 ---
 
+## 8. Guia de Estilo e Cores (UI/UX)
+
+A interface do PriceWatcher foi projetada com base em princípios de **Psicologia das Cores** e **UI/UX Design**, focando em usabilidade, conversão e credibilidade. A paleta escolhida transmite a sensação de um sistema tecnológico, direto e seguro.
+
+- **Azul (Cor Principal):** Utilizada como a cor primária do sistema, o azul é predominante na maioria das plataformas financeiras e sites de comparação de preços. O objetivo é transmitir **confiança, segurança e profissionalismo**, elementos essenciais para um usuário que busca uma ferramenta séria de monitoramento de mercado.
+- **Branco e Tons Neutros (Background):** Adoção de fundos brancos, resultando em um design limpo ("clean") e minimalista. Isso passa a ideia de que o sistema é **rápido, direto ao ponto e descomplicado**, evitando a sensação de sobrecarga comum em plataformas excessivamente poluídas. O foco é manter os dados e o conteúdo em primeiro plano.
+- **Verde (Sucesso / Economia):** Aplicado para feedbacks positivos, indicando ações bem-sucedidas e, principalmente, quando uma meta de preço é atingida (tendência de queda do preço). O verde condiciona de forma imediata a percepção de **oportunidade e lucro**.
+- **Vermelho (Erro / Alerta):** Reservado para feedbacks negativos, preenchimento incorreto de campos do formulário e quando o preço monitorado está muito acima da meta estipulada, demandando atenção do usuário.
+
+---
+
 **Última atualização:** Abril de 2026
-**Versão:** 2.1
-**Status:** Atualizado com versões exatas das tecnologias (Seção 0)
+**Versão:** 2.2
+**Status:** Adicionada documentação do Guia de Estilo e Cores (Seção 8)
