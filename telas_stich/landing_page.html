@@ -1,578 +1,290 @@
 <!doctype html>
 
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>PriceWatcher - Monitore preços e economize</title>
-    <!-- Bootstrap 5 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;display=swap"
-      rel="stylesheet"
-    />
-    <!-- Material Symbols -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --bs-primary: #004ac6;
-        --bs-primary-rgb: 0, 74, 198;
-        --surface: #f7f9fb;
-        --surface-container-low: #f2f4f6;
-        --surface-container-lowest: #ffffff;
-        --on-surface-variant: #434655;
-        --tertiary: #006242;
-        --tertiary-container: #bdffdb;
-        --on-tertiary-container: #002113;
-      }
 
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: var(--surface);
-        color: #191c1e;
-        overflow-x: hidden;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>PriceWatcher - Monitore preços e economize</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Material Symbols -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="landingpade.css">
+</head>
 
-      .navbar {
-        background-color: rgba(255, 255, 255, 0.8) !important;
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      }
-
-      .navbar-brand {
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        font-size: 1.5rem;
-      }
-
-      .btn-primary {
-        background: linear-gradient(135deg, #004ac6, #2563eb);
-        border: none;
-        padding: 0.8rem 2rem;
-        font-weight: 600;
-        border-radius: 0.5rem;
-        box-shadow: 0 10px 20px rgba(0, 74, 198, 0.15);
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 12px 24px rgba(0, 74, 198, 0.2);
-      }
-
-      .btn-light {
-        background-color: #e6e8ea;
-        border: none;
-        padding: 0.8rem 2rem;
-        font-weight: 600;
-        border-radius: 0.5rem;
-      }
-
-      .hero-section {
-        padding-top: 8rem;
-        padding-bottom: 5rem;
-      }
-
-      .hero-title {
-        font-size: clamp(2.5rem, 5vw, 4.5rem);
-        font-weight: 800;
-        line-height: 1.1;
-        letter-spacing: -0.03em;
-        margin-bottom: 1.5rem;
-      }
-
-      .hero-subtitle {
-        font-size: 1.25rem;
-        color: var(--on-surface-variant);
-        max-width: 550px;
-        margin-bottom: 2.5rem;
-      }
-
-      .label-metadata {
-        text-transform: uppercase;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        color: #737686;
-      }
-
-      .floating-card {
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 1rem;
-        padding: 1.25rem;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        position: absolute;
-        bottom: -20px;
-        left: -20px;
-        max-width: 280px;
-        z-index: 20;
-      }
-
-      .feature-card {
-        background: var(--surface-container-lowest);
-        border-radius: 1.25rem;
-        padding: 2.5rem;
-        height: 100%;
-        border: none;
-        transition: transform 0.3s ease;
-      }
-
-      .feature-card-blue {
-        background: linear-gradient(135deg, #004ac6, #2563eb);
-        color: white;
-      }
-
-      .product-card {
-        background: var(--surface-container-lowest);
-        border-radius: 1.5rem;
-        padding: 2rem;
-        border: none;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-      }
-
-      .badge-discount {
-        background-color: var(--tertiary-container);
-        color: var(--on-tertiary-container);
-        font-weight: 700;
-        font-size: 0.7rem;
-        padding: 0.4em 0.8em;
-        border-radius: 2rem;
-      }
-
-      .material-symbols-outlined {
-        vertical-align: middle;
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 24;
-      }
-
-      .footer {
-        border-top: 1px solid rgba(0, 0, 0, 0.05);
-        background-color: #f2f4f6;
-        padding: 3rem 0;
-      }
-
-      .footer-logo {
-        font-weight: 900;
-        font-size: 1.2rem;
-      }
-
-      .footer-link {
-        text-decoration: none;
-        color: #6c757d;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        margin: 0 1rem;
-      }
-
-      .footer-link:hover {
-        color: var(--bs-primary);
-      }
-
-      .integration-tag {
-        background: var(--surface);
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        border-radius: 0.75rem;
-        padding: 0.75rem 1.25rem;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        font-weight: 700;
-      }
-
-      .chart-container {
-        height: 100px;
-        width: 100%;
-        margin-bottom: 1rem;
-      }
-
-      /* Decorative Blur */
-      .blur-decoration {
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        background: rgba(0, 74, 198, 0.08);
-        filter: blur(80px);
-        border-radius: 50%;
-        z-index: -1;
-        top: -50px;
-        right: -50px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- TopNavBar -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top py-3"
-    >
+<body>
+  <!-- TopNavBar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-dark" href="#"
+        style="letter-spacing: -0.04em; font-size: 1.5rem">PriceWatcher</a>
+      <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler shadow-none border-0" data-bs-target="#navbarNav" data-bs-toggle="collapse" style=""
+        type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav gap-lg-3 me-auto">
+          <li class="nav-item" style="">
+            <a class="nav-link fw-medium text-secondary" href="#" style="">Funcionalidades</a>
+          </li>
+          <li class="nav-item" style="">
+            <a class="nav-link fw-medium text-secondary" href="#" style="">Como Funciona</a>
+          </li>
+          <li class="nav-item" style="">
+            <a class="nav-link fw-medium text-secondary" href="#" style="">Preços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-medium text-secondary" href="#">Entrar</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+          <button class="btn btn-primary px-4" style="">Começar Agora</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section">
       <div class="container">
-        <a
-          class="navbar-brand fw-bold text-dark"
-          href="#"
-          style="letter-spacing: -0.04em; font-size: 1.5rem"
-          >PriceWatcher</a
-        >
-        <button
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          class="navbar-toggler shadow-none border-0"
-          data-bs-target="#navbarNav"
-          data-bs-toggle="collapse"
-          style=""
-          type="button"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav gap-lg-3 me-auto">
-            <li class="nav-item" style="">
-              <a class="nav-link fw-medium text-secondary" href="#" style=""
-                >Funcionalidades</a
-              >
-            </li>
-            <li class="nav-item" style="">
-              <a class="nav-link fw-medium text-secondary" href="#" style=""
-                >Como Funciona</a
-              >
-            </li>
-            <li class="nav-item" style="">
-              <a class="nav-link fw-medium text-secondary" href="#" style=""
-                >Preços</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-medium text-secondary" href="#">Entrar</a>
-            </li>
-          </ul>
-          <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
-            <button class="btn btn-primary px-4" style="">Começar Agora</button>
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6">
+            <h1 class="hero-title text-dark" style="">
+              Compre de forma inteligente. Monitore preços e economize.
+            </h1>
+            <p class="hero-subtitle" style="">
+              Acompanhe produtos no Mercado Livre e na Amazon em um único
+              lugar. Receba alertas visuais quando o preço atingir sua meta.
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3 mb-4">
+              <button class="btn btn-primary btn-lg" style="">
+                Criar conta gratuita
+              </button>
+              <button class="btn btn-light btn-lg" style="">
+                Ver demonstração
+              </button>
+            </div>
+            <div class="d-flex align-items-center gap-4">
+              <div class="label-metadata d-flex align-items-center gap-1" style="">
+                <span class="material-symbols-outlined fs-6" style="">check_circle</span>
+                100% Gratuito
+              </div>
+              <div class="label-metadata d-flex align-items-center gap-1" style="">
+                <span class="material-symbols-outlined fs-6" style="">check_circle</span>
+                Alertas em tempo real
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 position-relative">
+            <div class="blur-decoration"></div>
+            <div class="position-relative bg-white p-2 rounded-4 shadow-sm">
+              <img alt="Dashboard" class="img-fluid rounded-3"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1UaOEl8wbc9W5OSn1ixSVUGBHk572YrLlDQ8PL4JQx_ErhfclJbKjg7AmzMU8q7-xA1RhYvlFgNBVKtgPtg0ovI3h1nMmbxeLsYofBX9wpYCpVSk-6YBf08YrMntWaojcKjG-7u_eWGA7y7t9gCsCfbm-2Rtr2K8F55e23rGfCOl5uYmHuX1vilR4SuDKqt_08IirohrvB44hA26fLBZb5acN3MpmzmpGXMIm7qtoSL-6hjPmDVn-QAQgoCwjecIFVhxkBeo9p7c"
+                style="" />
+              <div class="floating-card">
+                <div class="d-flex align-items-center gap-3 mb-2">
+                  <div
+                    class="rounded-circle bg-success bg-opacity-10 p-2 d-flex align-items-center justify-content-center"
+                    style="width: 40px; height: 40px">
+                    <span class="material-symbols-outlined text-success" style="">trending_down</span>
+                  </div>
+                  <div>
+                    <div class="label-metadata text-success mb-0" style="font-size: 0.6rem">
+                      Meta Atingida
+                    </div>
+                    <div class="fw-bold small" style="">iPhone 15 Pro</div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-baseline gap-2">
+                  <span class="h4 fw-bold mb-0 text-success" style="">R$ 5.999</span>
+                  <span class="small text-muted text-decoration-line-through" style="">R$ 7.200</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </nav>
-    <!-- Hero Section -->
-    <main>
-      <section class="hero-section">
-        <div class="container">
-          <div class="row align-items-center gy-5">
-            <div class="col-lg-6">
-              <h1 class="hero-title text-dark" style="">
-                Compre de forma inteligente. Monitore preços e economize.
-              </h1>
-              <p class="hero-subtitle" style="">
-                Acompanhe produtos no Mercado Livre e na Amazon em um único
-                lugar. Receba alertas visuais quando o preço atingir sua meta.
-              </p>
-              <div class="d-flex flex-column flex-sm-row gap-3 mb-4">
-                <button class="btn btn-primary btn-lg" style="">
-                  Criar conta gratuita
-                </button>
-                <button class="btn btn-light btn-lg" style="">
-                  Ver demonstração
-                </button>
-              </div>
-              <div class="d-flex align-items-center gap-4">
-                <div
-                  class="label-metadata d-flex align-items-center gap-1"
-                  style=""
-                >
-                  <span class="material-symbols-outlined fs-6" style=""
-                    >check_circle</span
-                  >
-                  100% Gratuito
-                </div>
-                <div
-                  class="label-metadata d-flex align-items-center gap-1"
-                  style=""
-                >
-                  <span class="material-symbols-outlined fs-6" style=""
-                    >check_circle</span
-                  >
-                  Alertas em tempo real
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 position-relative">
-              <div class="blur-decoration"></div>
-              <div class="position-relative bg-white p-2 rounded-4 shadow-sm">
-                <img
-                  alt="Dashboard"
-                  class="img-fluid rounded-3"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1UaOEl8wbc9W5OSn1ixSVUGBHk572YrLlDQ8PL4JQx_ErhfclJbKjg7AmzMU8q7-xA1RhYvlFgNBVKtgPtg0ovI3h1nMmbxeLsYofBX9wpYCpVSk-6YBf08YrMntWaojcKjG-7u_eWGA7y7t9gCsCfbm-2Rtr2K8F55e23rGfCOl5uYmHuX1vilR4SuDKqt_08IirohrvB44hA26fLBZb5acN3MpmzmpGXMIm7qtoSL-6hjPmDVn-QAQgoCwjecIFVhxkBeo9p7c"
-                  style=""
-                />
-                <div class="floating-card">
-                  <div class="d-flex align-items-center gap-3 mb-2">
-                    <div
-                      class="rounded-circle bg-success bg-opacity-10 p-2 d-flex align-items-center justify-content-center"
-                      style="width: 40px; height: 40px"
-                    >
-                      <span
-                        class="material-symbols-outlined text-success"
-                        style=""
-                        >trending_down</span
-                      >
-                    </div>
-                    <div>
-                      <div
-                        class="label-metadata text-success mb-0"
-                        style="font-size: 0.6rem"
-                      >
-                        Meta Atingida
-                      </div>
-                      <div class="fw-bold small" style="">iPhone 15 Pro</div>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-baseline gap-2">
-                    <span class="h4 fw-bold mb-0 text-success" style=""
-                      >R$ 5.999</span
-                    >
-                    <span
-                      class="small text-muted text-decoration-line-through"
-                      style=""
-                      >R$ 7.200</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    </section>
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+      <div class="container py-5">
+        <div class="mb-5">
+          <p class="text-primary fw-bold label-metadata mb-2" style="">
+            Funcionalidades
+          </p>
+          <h2 class="display-6 fw-bold text-dark" style="">
+            Potencialize suas compras
+          </h2>
         </div>
-      </section>
-      <!-- Features Section -->
-      <section class="py-5 bg-light">
-        <div class="container py-5">
-          <div class="mb-5">
-            <p class="text-primary fw-bold label-metadata mb-2" style="">
-              Funcionalidades
-            </p>
-            <h2 class="display-6 fw-bold text-dark" style="">
-              Potencialize suas compras
-            </h2>
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="feature-card d-flex flex-column justify-content-between">
+              <div>
+                <h3 class="h4 fw-bold mb-3" style="">Monitore ML e Amazon</h3>
+                <p class="text-secondary opacity-75" style="">
+                  Integração direta com os maiores marketplaces do Brasil.
+                  Basta colar o link e nós cuidamos do resto, monitorando
+                  variações a cada minuto.
+                </p>
+              </div>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <div class="integration-tag">
+                  <span class="material-symbols-outlined text-primary fs-3" style="">shopping_cart</span>
+                  <span class="" style="">Mercado Livre</span>
+                </div>
+                <div class="integration-tag">
+                  <span class="material-symbols-outlined text-primary fs-3" style="">package_2</span>
+                  <span class="" style="">Amazon BR</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="row g-4">
-            <div class="col-lg-8">
-              <div
-                class="feature-card d-flex flex-column justify-content-between"
-              >
-                <div>
-                  <h3 class="h4 fw-bold mb-3" style="">Monitore ML e Amazon</h3>
-                  <p class="text-secondary opacity-75" style="">
-                    Integração direta com os maiores marketplaces do Brasil.
-                    Basta colar o link e nós cuidamos do resto, monitorando
-                    variações a cada minuto.
-                  </p>
-                </div>
-                <div class="d-flex flex-wrap gap-3 mt-4">
-                  <div class="integration-tag">
-                    <span
-                      class="material-symbols-outlined text-primary fs-3"
-                      style=""
-                      >shopping_cart</span
-                    >
-                    <span class="" style="">Mercado Livre</span>
-                  </div>
-                  <div class="integration-tag">
-                    <span
-                      class="material-symbols-outlined text-primary fs-3"
-                      style=""
-                      >package_2</span
-                    >
-                    <span class="" style="">Amazon BR</span>
-                  </div>
-                </div>
-              </div>
+          <div class="col-lg-4">
+            <div class="feature-card feature-card-blue d-flex flex-column justify-content-center py-5">
+              <span class="material-symbols-outlined display-3 mb-4" style="">notifications_active</span>
+              <h3 class="h4 fw-bold mb-3" style="">Alertas instantâneos</h3>
+              <p class="mb-0 opacity-75" style="">
+                Receba notificações imediatas no seu navegador ou via e-mail
+                no exato momento em que o preço cair.
+              </p>
             </div>
-            <div class="col-lg-4">
-              <div
-                class="feature-card feature-card-blue d-flex flex-column justify-content-center py-5"
-              >
-                <span class="material-symbols-outlined display-3 mb-4" style=""
-                  >notifications_active</span
-                >
-                <h3 class="h4 fw-bold mb-3" style="">Alertas instantâneos</h3>
-                <p class="mb-0 opacity-75" style="">
-                  Receba notificações imediatas no seu navegador ou via e-mail
-                  no exato momento em que o preço cair.
-                </p>
+          </div>
+          <div class="col-lg-4">
+            <div class="feature-card">
+              <div class="bg-success bg-opacity-10 text-success rounded-3 d-inline-flex p-3 mb-4">
+                <span class="material-symbols-outlined" style="">target</span>
               </div>
+              <h3 class="h5 fw-bold mb-3" style="">Defina metas de preço</h3>
+              <p class="text-secondary opacity-75 mb-0" style="">
+                Escolha quanto quer pagar. Nós avisamos apenas quando o valor
+                chegar onde você deseja.
+              </p>
             </div>
-            <div class="col-lg-4">
-              <div class="feature-card">
-                <div
-                  class="bg-success bg-opacity-10 text-success rounded-3 d-inline-flex p-3 mb-4"
-                >
-                  <span class="material-symbols-outlined" style="">target</span>
+          </div>
+          <div class="col-lg-8">
+            <div class="feature-card d-flex flex-column flex-md-row align-items-center gap-4">
+              <div class="flex-grow-1">
+                <div class="bg-primary bg-opacity-10 text-primary rounded-3 d-inline-flex p-3 mb-4">
+                  <span class="material-symbols-outlined" style="">link</span>
                 </div>
-                <h3 class="h5 fw-bold mb-3" style="">Defina metas de preço</h3>
+                <h3 class="h5 fw-bold mb-3" style="">
+                  Gerencie seus links de afiliado
+                </h3>
                 <p class="text-secondary opacity-75 mb-0" style="">
-                  Escolha quanto quer pagar. Nós avisamos apenas quando o valor
-                  chegar onde você deseja.
+                  Ideal para criadores de conteúdo. Monitore preços e gere
+                  links de afiliado automaticamente para sua audiência.
                 </p>
               </div>
-            </div>
-            <div class="col-lg-8">
-              <div
-                class="feature-card d-flex flex-column flex-md-row align-items-center gap-4"
-              >
-                <div class="flex-grow-1">
-                  <div
-                    class="bg-primary bg-opacity-10 text-primary rounded-3 d-inline-flex p-3 mb-4"
-                  >
-                    <span class="material-symbols-outlined" style="">link</span>
-                  </div>
-                  <h3 class="h5 fw-bold mb-3" style="">
-                    Gerencie seus links de afiliado
-                  </h3>
-                  <p class="text-secondary opacity-75 mb-0" style="">
-                    Ideal para criadores de conteúdo. Monitore preços e gere
-                    links de afiliado automaticamente para sua audiência.
-                  </p>
-                </div>
-                <div
-                  class="bg-light rounded-4 p-4 w-100"
-                  style="
+              <div class="bg-light rounded-4 p-4 w-100" style="
                     max-width: 300px;
                     border: 1px solid rgba(0, 0, 0, 0.05);
-                  "
-                >
-                  <div
-                    class="bg-secondary bg-opacity-10 rounded-pill mb-2"
-                    style="height: 8px; width: 60%"
-                  ></div>
-                  <div
-                    class="bg-secondary bg-opacity-10 rounded-pill mb-4"
-                    style="height: 8px; width: 85%"
-                  ></div>
-                  <div
-                    class="bg-primary bg-opacity-20 rounded-3"
-                    style="height: 40px; width: 100%"
-                  ></div>
-                </div>
+                  ">
+                <div class="bg-secondary bg-opacity-10 rounded-pill mb-2" style="height: 8px; width: 60%"></div>
+                <div class="bg-secondary bg-opacity-10 rounded-pill mb-4" style="height: 8px; width: 85%"></div>
+                <div class="bg-primary bg-opacity-20 rounded-3" style="height: 40px; width: 100%"></div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Product Visualization Section -->
-      <section class="py-5">
-        <div class="container py-5 text-center">
-          <div class="max-width-700 mx-auto mb-5">
-            <h2 class="display-6 fw-bold mb-3" style="">
-              Acompanhe cada centavo
-            </h2>
-            <p class="text-secondary opacity-75 lead" style="">
-              Nossa interface limpa permite visualizar o histórico de preços e
-              identificar tendências reais de desconto.
-            </p>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-xl-9">
-              <div class="product-card text-start">
-                <div class="row align-items-center g-4">
-                  <div class="col-md-auto text-center">
-                    <div
-                      class="bg-light rounded-4 overflow-hidden p-3 d-flex align-items-center justify-content-center"
-                      style="width: 160px; height: 160px"
-                    >
-                      <img
-                        alt="Produto"
-                        class="img-fluid"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5dz3urJZHUub-b8r6JFiR5cp7VHQuMRhBDwKP83wn4tleI1xoJxLq7Mv-a4NmCpJwqtUexDPRyWDHqA7_2NE24tWBGj-Y_75D2aFZbAwVb4nEeQ878hMO3TOuTncRTF9kFqBinKWH2XoI24xCYzZZ6dCD6meE3yRZjM3ftZGNqnVhZkuE0_nrAWov31tWucMyhtBWTUU9e-rNPlrsDwRDgzU7FjsmlbsWR9q8kTi1S_vMhSJ6jGGP2_1AVlllbVA8NT2EXtTAbp0"
-                        style=""
-                      />
-                    </div>
-                  </div>
-                  <div class="col-md">
-                    <div
-                      class="d-flex justify-content-between align-items-start mb-2"
-                    >
-                      <div>
-                        <div class="label-metadata mb-1" style="">
-                          Amazon.com.br
-                        </div>
-                        <h3 class="h4 fw-bold" style="">
-                          Fone de Ouvido Premium Wireless
-                        </h3>
-                      </div>
-                      <span class="badge-discount" style="">-15% HOJE</span>
-                    </div>
-                    <div class="chart-container py-2">
-                      <svg
-                        class="w-100 h-100"
-                        preserveaspectratio="none"
-                        viewbox="0 0 400 100"
-                      >
-                        <path
-                          d="M0 80 Q 50 75, 100 85 T 200 40 T 300 60 T 400 20"
-                          fill="none"
-                          stroke="#006242"
-                          stroke-width="3"
-                        ></path>
-                        <path
-                          d="M0 80 Q 50 75, 100 85 T 200 40 T 300 60 T 400 20 L 400 100 L 0 100 Z"
-                          fill="rgba(0, 98, 66, 0.1)"
-                        ></path>
-                      </svg>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-end">
-                      <div>
-                        <div class="text-secondary small" style="">
-                          Preço Atual
-                        </div>
-                        <div class="h3 fw-bold text-dark mb-0" style="">
-                          R$ 1.249,00
-                        </div>
-                      </div>
-                      <button class="btn btn-primary px-4" style="">
-                        Ver Oferta
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="row align-items-center justify-content-between gy-4">
-          <div class="col-md-auto text-center text-md-start">
-            <div class="footer-logo" style="">PriceWatcher</div>
-          </div>
-          <div class="col-md text-center">
-            <div class="d-flex flex-wrap justify-content-center">
-              <a class="footer-link" href="#" style="">Terms</a>
-              <a class="footer-link" href="#" style="">Privacy</a>
-              <a class="footer-link" href="#" style="">Support</a>
-              <a class="footer-link" href="#" style="">API</a>
-            </div>
-          </div>
-          <div class="col-md-auto text-center text-md-end">
-            <div class="label-metadata" style="font-size: 0.65rem">
-              © 2024 Precision Ledger. All rights reserved.
             </div>
           </div>
         </div>
       </div>
-    </footer>
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    </section>
+    <!-- Product Visualization Section -->
+    <section class="py-5">
+      <div class="container py-5 text-center">
+        <div class="max-width-700 mx-auto mb-5">
+          <h2 class="display-6 fw-bold mb-3" style="">
+            Acompanhe cada centavo
+          </h2>
+          <p class="text-secondary opacity-75 lead" style="">
+            Nossa interface limpa permite visualizar o histórico de preços e
+            identificar tendências reais de desconto.
+          </p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-9">
+            <div class="product-card text-start">
+              <div class="row align-items-center g-4">
+                <div class="col-md-auto text-center">
+                  <div class="bg-light rounded-4 overflow-hidden p-3 d-flex align-items-center justify-content-center"
+                    style="width: 160px; height: 160px">
+                    <img alt="Produto" class="img-fluid"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5dz3urJZHUub-b8r6JFiR5cp7VHQuMRhBDwKP83wn4tleI1xoJxLq7Mv-a4NmCpJwqtUexDPRyWDHqA7_2NE24tWBGj-Y_75D2aFZbAwVb4nEeQ878hMO3TOuTncRTF9kFqBinKWH2XoI24xCYzZZ6dCD6meE3yRZjM3ftZGNqnVhZkuE0_nrAWov31tWucMyhtBWTUU9e-rNPlrsDwRDgzU7FjsmlbsWR9q8kTi1S_vMhSJ6jGGP2_1AVlllbVA8NT2EXtTAbp0"
+                      style="" />
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                      <div class="label-metadata mb-1" style="">
+                        Amazon.com.br
+                      </div>
+                      <h3 class="h4 fw-bold" style="">
+                        Fone de Ouvido Premium Wireless
+                      </h3>
+                    </div>
+                    <span class="badge-discount" style="">-15% HOJE</span>
+                  </div>
+                  <div class="chart-container py-2">
+                    <svg class="w-100 h-100" preserveaspectratio="none" viewbox="0 0 400 100">
+                      <path d="M0 80 Q 50 75, 100 85 T 200 40 T 300 60 T 400 20" fill="none" stroke="#006242"
+                        stroke-width="3"></path>
+                      <path d="M0 80 Q 50 75, 100 85 T 200 40 T 300 60 T 400 20 L 400 100 L 0 100 Z"
+                        fill="rgba(0, 98, 66, 0.1)"></path>
+                    </svg>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-end">
+                    <div>
+                      <div class="text-secondary small" style="">
+                        Preço Atual
+                      </div>
+                      <div class="h3 fw-bold text-dark mb-0" style="">
+                        R$ 1.249,00
+                      </div>
+                    </div>
+                    <button class="btn btn-primary px-4" style="">
+                      Ver Oferta
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row align-items-center justify-content-between gy-4">
+        <div class="col-md-auto text-center text-md-start">
+          <div class="footer-logo" style="">PriceWatcher</div>
+        </div>
+        <div class="col-md text-center">
+          <div class="d-flex flex-wrap justify-content-center">
+            <a class="footer-link" href="#" style="">Terms</a>
+            <a class="footer-link" href="#" style="">Privacy</a>
+            <a class="footer-link" href="#" style="">Support</a>
+            <a class="footer-link" href="#" style="">API</a>
+          </div>
+        </div>
+        <div class="col-md-auto text-center text-md-end">
+          <div class="label-metadata" style="font-size: 0.65rem">
+            © 2024 Precision Ledger. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="atvdd.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Primeira Linha: Três Colunas com Largura Automática -->
+        <div class="row">
+            <div class="col text-bg-info">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exemploModal">Abrir Modal</button>
+            </div>
+            <div class="col bg-danger">
+                <div class="card custom-card">
+                    <img src="https://placehold.co/150x100" class="card-img-top img-fluid col" alt="Imagem">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase fw-bold">Título do Card</h5>
+                        <p class="card-text fs-5">Este é um exemplo de texto no corpo do card.</p>
+                    </div>  
+                </div>
+            </div>
+            <div class="col d-none d-md-block text-bg-warning">
+                <div class="d-flex justify-content-beetween">
+                    <button class="btn btn-success">Botão 1</button>
+                    <button class="btn btn-danger">Botão 2</button>
+                    <button class="btn btn-warning">Botão 3</button>
+                    <button class="btn btn-info">Botão 4</button>
+                    <button class="btn btn-dark">Botão 5</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal" tabindex="-1" id="exemploModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Título do Modal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Esta é a descrição do modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Segunda Linha: Coluna Única -->
+        <div class="row">
+            <div class="col-12 text-bg-secondary">
+                <i class="bi bi-1-circle"></i>
+                <i class="bi bi-2-square"></i>
+                <i class="bi bi-3-circle-fill"></i>,x6
+            </div>
+            <div class="col-12 text-bg-secondary"></div>
+        </div>
+        <!-- Terceira Linha: Tamanhos Fixos, Offset e Order -->
+        <div class="row">
+            <!-- Coluna com offset -->
+            <div class="col-md-4 offset-md-2 text-bg-info">Coluna com Offset</div>
+            <!-- Coluna com ordem personalizada -->
+            <div class="col-md-4 order-md-3 text-bg-danger">Coluna com Ordem 3</div>
+            <!-- Coluna padrão -->
+            <div class="col-md-4 order-md-1 text-bg-warning">Coluna com Ordem 1</div>
+        </div>
+    </div>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

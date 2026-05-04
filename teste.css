@@ -1,0 +1,13 @@
+.nav-class {
+
+}
+
+.text-logo {
+    font-size: 1.5rem;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+}
+
+.button-nav {
+    --bs-btn-padding-x: 1.5rem;
+}

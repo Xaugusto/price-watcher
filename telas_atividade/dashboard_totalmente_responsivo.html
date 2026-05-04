@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meus Produtos | PriceWatcher</title>
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8) !important;
+        }
+        .material-symbols-outlined {
+            vertical-align: middle;
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            border-radius: 0.75rem;
+        }
+        .product-img-container {
+            height: 100%;
+            min-height: 250px;
+        }
+        @media (max-width: 767.98px) {
+            .product-img-container {
+                min-height: 200px;
+                max-height: 300px;
+            }
+        }
+        .product-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .stat-card {
+            background-color: #f1f3f5;
+            border-radius: 0.75rem;
+            flex: 1;
+        }
+        .price-reached {
+            border: 2px solid #198754;
+        }
+        .ls-wide {
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-light sticky-top border-bottom">
+<div class="container py-2">
+<a class="navbar-brand fw-bold fs-3" href="#">PriceWatcher</a>
+<button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav me-auto mb-2 mb-md-0 ms-md-4">
+<li class="nav-item">
+<a class="nav-link active fw-semibold border-bottom border-primary border-3" href="#">Meus Produtos</a>
+</li>
+<li class="nav-item">
+<a class="nav-link text-muted" href="#">Cadastrar Produto</a>
+</li>
+</ul>
+<div class="d-flex align-items-center gap-3">
+<button class="btn btn-link text-dark p-1">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="btn btn-link text-dark p-1">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="container py-5">
+<!-- Header -->
+<header class="row align-items-end mb-5">
+<div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
+<p class="text-uppercase fw-bold text-muted small mb-1 ls-wide">Painel de Controle</p>
+<h1 class="display-5 fw-bold">Meus Produtos</h1>
+</div>
+<div class="col-lg-6">
+<div class="d-flex flex-column flex-sm-row justify-content-lg-end gap-3">
+<div class="stat-card p-3 d-flex align-items-center gap-3">
+<div class="bg-primary bg-opacity-10 p-2 rounded text-primary">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div>
+<p class="text-muted small fw-bold text-uppercase mb-0">Total de produtos</p>
+<p class="h4 fw-bold mb-0">12</p>
+</div>
+</div>
+<div class="stat-card p-3 d-flex align-items-center gap-3">
+<div class="bg-success bg-opacity-10 p-2 rounded text-success">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+</div>
+<div>
+<p class="text-muted small fw-bold text-uppercase mb-0">Alertas ativos</p>
+<p class="h4 fw-bold mb-0">03</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Product Grid -->
+<div class="row g-4">
+<!-- Big Product Card (Sony) -->
+<div class="col-lg-8">
+<div class="card h-100 price-reached overflow-hidden">
+<div class="row g-0 h-100">
+<div class="col-12 col-md-4 product-img-container">
+<img alt="Sony Headset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuVgZDjRlBi36i35eRsdNX3xhEPbqRl3jh6HN7T6oMES-UdKuUu8pDw5z0E6WjjGAc_jU8Ao_1AncJbDNXe87GWYBc8FYWzNpJFlAud56UBqTbB7JiXgqmc0trRYtfFG9TMOpvPAQuKQxzEmwjF5rUbTxQgMdBuQ3fz_bFz_1wU95Xdme91Fua9FyS2KhUtEu-umOGVFteGBbQ07hmwXaHxdNo-K4sMBVRkPi82XBpMZWZ1F2vkZFUj33GZeT6ZxM6CCfVQSrsdOI"/>
+</div>
+<div class="col-12 col-md-8 p-4 d-flex flex-column">
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start mb-3 mb-md-2">
+<h3 class="h4 fw-bold mb-2 mb-md-0">Sony WH-1000XM5 Noise Canceling</h3>
+<span class="badge bg-success rounded-pill text-uppercase small py-2 px-3">
+<span class="material-symbols-outlined fs-6 align-top">check_circle</span> Preço Atingido
+                            </span>
+</div>
+<p class="text-muted small text-uppercase fw-medium mb-4">
+<span class="material-symbols-outlined small align-top">schedule</span> Atualizado há 15 min
+                        </p>
+<div class="row g-3 mb-auto">
+<div class="col-6 col-sm-4">
+<p class="text-muted small text-uppercase fw-bold mb-1">Meta de Preço</p>
+<p class="h5 fw-bold">R$ 1.850</p>
+</div>
+<div class="col-12 col-sm-4 order-3 order-sm-2">
+<div class="bg-success bg-opacity-10 p-2 rounded">
+<p class="text-success small text-uppercase fw-bold mb-1">Preço ML</p>
+<p class="h5 fw-bold text-success mb-0">R$ 1.799</p>
+</div>
+</div>
+<div class="col-6 col-sm-4 order-2 order-sm-3">
+<p class="text-muted small text-uppercase fw-bold mb-1">Preço Amazon</p>
+<p class="h5 fw-bold">R$ 1.940</p>
+</div>
+</div>
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-4 pt-3 border-top gap-3">
+<div class="d-flex gap-4 w-100 w-md-auto justify-content-center justify-content-md-start">
+<button class="btn btn-link text-primary text-decoration-none fw-bold p-0 text-uppercase small">
+<span class="material-symbols-outlined fs-6 align-middle">edit</span> Editar
+                                </button>
+<button class="btn btn-link text-danger text-decoration-none fw-bold p-0 text-uppercase small">
+<span class="material-symbols-outlined fs-6 align-middle">delete</span> Remover
+                                </button>
+</div>
+<button class="btn btn-primary px-4 fw-bold text-uppercase small w-100 w-md-auto">Ir para Loja</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Vertical Card (iPhone) -->
+<div class="col-lg-4">
+<div class="card h-100 overflow-hidden">
+<img alt="iPhone 15 Pro" class="card-img-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkJH474nXbXngNIKQUGVC025eFF2W3JBA1c_nK1oQEWxVINTl_VVIUsGvcepYoXYf1vxgxLbExKDo2ROFECo8R5ojhsYU4eYHwfiA6tTgszd0eDtByRloZaS8ZNWh9_d1NTrQ56oxLP6nQP6BiZ49NtA7deSqVWf_J2vlej0BYTZ2ztepFVr0uUr9I2iI0a54SBFIg9bL9i_W0urfx8vf2sYAty_UW_pL3eDmnDqkwF40_YoFwO4X8yoXRpZiSL1Sjj8GlEXST3xA" style="height: 180px; object-fit: cover;"/>
+<div class="card-body d-flex flex-column">
+<h3 class="h5 fw-bold mb-4">iPhone 15 Pro 128GB Blue Titanium</h3>
+<div class="bg-light p-3 rounded mb-4 d-flex justify-content-between align-items-center">
+<span class="text-muted small text-uppercase fw-bold">Meta</span>
+<span class="fw-bold">R$ 6.200</span>
+</div>
+<div class="row g-2 mb-auto">
+<div class="col-6">
+<p class="text-muted small text-uppercase fw-bold mb-1">Preço ML</p>
+<p class="fw-semibold mb-0">R$ 6.450</p>
+</div>
+<div class="col-6">
+<p class="text-muted small text-uppercase fw-bold mb-1">Preço Amazon</p>
+<p class="fw-semibold mb-0">R$ 6.890</p>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+<div class="d-flex gap-3 text-muted">
+<span class="material-symbols-outlined cursor-pointer">edit</span>
+<span class="material-symbols-outlined cursor-pointer">delete</span>
+</div>
+<span class="badge bg-secondary bg-opacity-10 text-secondary text-uppercase py-1 px-2 small">Monitorando</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Vertical Card (Keyboard) -->
+<div class="col-lg-4">
+<div class="card h-100 overflow-hidden">
+<img alt="Keyboard" class="card-img-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeSM5cNMzu4UqxjeLHHbFdf79hzSvaOUa9bcVw_jPeGUQU-8oEmywc6fcgb6e9PsDdr7oRE1q4qZlx4pikIpIBn9zgnAKXPDQWtcM0m_K1y7Es6FGlEiz8stwKpM6TyYAM5GYcUlWRQKOaEHbScFzBYvpzzu-QMNiRQ40F771DfwDqPQjG-m5mfNy7i7qBRGMnfYkMbNp2_exAaPhz-iC5a5FmszL7s6z9Sto4FJ5gJNUTRzYnS-nBYhVpXCGnSOvOySYbBhbJDcc" style="height: 180px; object-fit: cover;"/>
+<div class="card-body d-flex flex-column">
+<h3 class="h5 fw-bold mb-4">Keyboard Mechanical K95 Pro</h3>
+<div class="bg-light p-3 rounded mb-4 d-flex justify-content-between align-items-center">
+<span class="text-muted small text-uppercase fw-bold">Meta</span>
+<span class="fw-bold">R$ 900</span>
+</div>
+<div class="row g-2 mb-auto">
+<div class="col-6">
+<p class="text-muted small text-uppercase fw-bold mb-1">Preço ML</p>
+<p class="fw-semibold mb-0">R$ 1.100</p>
+</div>
+<div class="col-6">
+<p class="text-muted small text-uppercase fw-bold mb-1">Preço Amazon</p>
+<p class="fw-semibold mb-0">R$ 999</p>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+<div class="d-flex gap-3 text-muted">
+<span class="material-symbols-outlined cursor-pointer">edit</span>
+<span class="material-symbols-outlined cursor-pointer">delete</span>
+</div>
+<span class="badge bg-secondary bg-opacity-10 text-secondary text-uppercase py-1 px-2 small">Monitorando</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Horizontal Alert Card (Fujifilm) -->
+<div class="col-lg-8">
+<div class="card price-reached h-100 overflow-hidden">
+<div class="row g-0 h-100">
+<div class="col-12 col-md-3 product-img-container">
+<img alt="Camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0XI-XkGPfNSBONPx4NoCb-HglloYgroBSuIpIe2aJRLi4X5r3nz4DEA-h3VEmadecqvFR9Fbh_NnU8QkibvxcZihNX7y1KoqSCyGv79E4A61krvbowndCgRmROBP9Nw9ZG291Yg0cavOKrIpQtTywFxpl-hqyZmVVeJfMcX60SEmv0K4ZWyIygdEF5_70vo-m5XtHac4J4RYJDs7eRL9cKRZ4e3AMNpjx-U_V9UoDCl1YgoxHlxRWuidvy7k_KZLLa2SQ6v2-zwA"/>
+</div>
+<div class="col-12 col-md-9 p-4 d-flex flex-column">
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start mb-3">
+<h3 class="h5 fw-bold mb-2 mb-md-0">Fujifilm X-T5 Mirrorless Camera</h3>
+<span class="badge bg-success bg-opacity-10 text-success text-uppercase py-1 px-2 small">Preço Atingido</span>
+</div>
+<div class="row g-3 mb-auto">
+<div class="col-6 col-sm-4 border-end-sm">
+<p class="text-muted small text-uppercase fw-bold mb-1">Meta</p>
+<p class="fw-bold h6 mb-0">R$ 8.500</p>
+</div>
+<div class="col-6 col-sm-4 border-end-sm">
+<p class="text-muted small text-uppercase fw-bold mb-1">Preço ML</p>
+<p class="fw-bold h6 mb-0">R$ 9.100</p>
+</div>
+<div class="col-12 col-sm-4">
+<div class="bg-success bg-opacity-10 p-2 rounded">
+<p class="text-success small text-uppercase fw-bold mb-0">Preço Amazon</p>
+<p class="fw-bold h6 text-success mb-0">R$ 8.490</p>
+</div>
+</div>
+</div>
+<div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+<div class="d-flex gap-4">
+<button class="btn btn-link text-muted p-0"><span class="material-symbols-outlined">edit</span></button>
+<button class="btn btn-link text-muted p-0"><span class="material-symbols-outlined">delete</span></button>
+</div>
+<button class="btn btn-outline-primary btn-sm px-4 fw-bold text-uppercase">Detalhes</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-top py-5 mt-5">
+<div class="container">
+<div class="row align-items-center text-center text-md-start">
+<div class="col-md-3 mb-4 mb-md-0">
+<span class="fw-black h5 text-uppercase ls-tight">PriceWatcher</span>
+</div>
+<div class="col-md-6 mb-4 mb-md-0">
+<div class="d-flex justify-content-center gap-4 small text-uppercase fw-bold text-muted">
+<a class="text-decoration-none text-reset hover-primary" href="#">Terms</a>
+<a class="text-decoration-none text-reset hover-primary" href="#">Privacy</a>
+<a class="text-decoration-none text-reset hover-primary" href="#">Support</a>
+<a class="text-decoration-none text-reset hover-primary" href="#">API</a>
+</div>
+</div>
+<div class="col-md-3 text-md-end small text-muted text-uppercase">
+                © 2024 Precision Ledger. All rights reserved.
+            </div>
+</div>
+</div>
+</footer>
+<!-- FAB -->
+<button class="btn btn-primary fab">
+<span class="material-symbols-outlined fs-2">add</span>
+</button>
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body></html>
