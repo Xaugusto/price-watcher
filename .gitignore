@@ -4,3 +4,5 @@
 /package-lock.json
 # Ignora telas do stitch
 /telas_stitch
+# ignora a pasta de atividades 
+/atvdd
