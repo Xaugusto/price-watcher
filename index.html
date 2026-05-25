@@ -1,72 +1,111 @@
 <!DOCTYPE html>
-
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PriceWatcher - Monitoramento Inteligente</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Bootstrap CSS -->
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>PriceWatcher</title>
+    <!-- Bootstrap 5 CSS -->
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Material Symbols -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="login-container">
-        <div class="glass-panel login-card animate-fade-in">
-            <div class="brand-logo text-center">
-                <i class="bi bi-graph-up-arrow me-2"></i>PriceWatcher
-            </div>
-
-            <h4 class="text-center mb-4 px-3" style="color: var(--text-primary); font-weight: 500;">
-                Monitore preços e economize de verdade.
-            </h4>
-
-            <form action="dashboard.html" method="GET">
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control form-control-glass bg-transparent" id="emailInput"
-                        placeholder="nome@exemplo.com" required>
-                    <label for="emailInput">Endereço de Email</label>
-                </div>
-
-                <div class="form-floating mb-4">
-                    <input type="password" class="form-control form-control-glass bg-transparent" id="passwordInput"
-                        placeholder="Senha" required>
-                    <label for="passwordInput">Senha</label>
-                </div>
-
-                <div class="d-flex justify-content-between align-items-center mb-4 px-1">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="rememberMe">
-                        <label class="form-check-label text-secondary" for="rememberMe">
-                            Lembrar-me
-                        </label>
-                    </div>
-                    <a href="#" class="text-decoration-none" style="color: var(--primary-color);">Esqueceu a senha?</a>
-                </div>
-
-                <button type="submit" class="btn btn-premium w-100 mb-3">
-                    Entrar na Conta <i class="bi bi-arrow-right ms-2"></i>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom py-3">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-dark" href="#" style="letter-spacing: -0.04em; font-size: 1.5rem">PriceWatcher</a>  
+                <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler shadow-none border-0" data-bs-target="#navbarNav" data-bs-toggle="collapse" style=""
+                    type="button">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-            </form>
-
-            <div class="text-center mt-4">
-                <p class="text-secondary mb-0">Novo no PriceWatcher?
-                    <a href="#" class="text-decoration-none fw-bold" style="color: var(--secondary-color);">Crie sua
-                        conta</a>
-                </p>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav gap-lg-3 me-auto">
+                        <li class="nav-item" style="">
+                            <a href="#func" class="nav-link fw-medium text-secondary">Funcionalidades</a>
+                        </li>
+                        <li class="nav-item" style="">
+                            <a href="#comofunc" class="nav-link fw-medium text-secondary">Como Funciona</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link fw-medium text-secondary">Entrar</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+                        <button class="btn btn-primary px-4" style="">Começar Agora</button>
+                    </div>
+                </div>
             </div>
+        </nav>  
+    </header>
+    <main>
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6">
+            <h1 class="hero-title text-dark" style="">
+              Compre de forma inteligente. Monitore preços e economize.
+            </h1>
+            <p class="hero-subtitle" style="">
+              Acompanhe produtos no Mercado Livre e na Amazon em um único
+              lugar. Receba alertas visuais quando o preço atingir sua meta.
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3 mb-4">
+              <button class="btn btn-primary btn-lg" style="">
+                Criar conta gratuita
+              </button>
+              <button class="btn btn-light btn-lg" style="">
+                Ver demonstração
+              </button>
+            </div>
+            <div class="d-flex align-items-center gap-4">
+              <div class="label-metadata d-flex align-items-center gap-1" style="">
+                <span class="material-symbols-outlined fs-6" style="">check_circle</span>
+                100% Gratuito
+              </div>
+              <div class="label-metadata d-flex align-items-center gap-1" style="">
+                <span class="material-symbols-outlined fs-6" style="">check_circle</span>
+                Alertas em tempo real
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 position-relative">
+            <div class="blur-decoration"></div>
+            <div class="position-relative bg-white p-2 rounded-4 shadow-sm">
+              <img alt="Dashboard" class="img-fluid rounded-3"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1UaOEl8wbc9W5OSn1ixSVUGBHk572YrLlDQ8PL4JQx_ErhfclJbKjg7AmzMU8q7-xA1RhYvlFgNBVKtgPtg0ovI3h1nMmbxeLsYofBX9wpYCpVSk-6YBf08YrMntWaojcKjG-7u_eWGA7y7t9gCsCfbm-2Rtr2K8F55e23rGfCOl5uYmHuX1vilR4SuDKqt_08IirohrvB44hA26fLBZb5acN3MpmzmpGXMIm7qtoSL-6hjPmDVn-QAQgoCwjecIFVhxkBeo9p7c"
+                style="" />
+              <div class="floating-card">
+                <div class="d-flex align-items-center gap-3 mb-2">
+                  <div
+                    class="rounded-circle bg-success bg-opacity-10 p-2 d-flex align-items-center justify-content-center"
+                    style="width: 40px; height: 40px">
+                    <span class="material-symbols-outlined text-success" style="">trending_down</span>
+                  </div>
+                  <div>
+                    <div class="label-metadata text-success mb-0" style="font-size: 0.6rem">
+                      Meta Atingida
+                    </div>
+                    <div class="fw-bold small" style="">iPhone 15 Pro</div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-baseline gap-2">
+                  <span class="h4 fw-bold mb-0 text-success" style="">R$ 5.999</span>
+                  <span class="small text-muted text-decoration-line-through" style="">R$ 7.200</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-
-    <!-- Bootstrap JS -->
+      </div>
+    </section>
+    </main>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
