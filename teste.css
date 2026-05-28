@@ -1,13 +1,108 @@
-.nav-class {
-
+:root {
+    --bs-primary: #004ac6;
+    --bs-primary-rgb: 0, 74, 198;
+    --surface: #f7f9fb;
+    --surface-container-low: #f2f4f6;
+    --surface-container-lowest: #ffffff;
+    --on-surface-variant: #434655;
+    --tertiary: #006242;
+    --tertiary-container: #bdffdb;
+    --on-tertiary-container: #002113;
 }
 
-.text-logo {
-    font-size: 1.5rem;
-    letter-spacing: -0.04em;
+body {
+    font-family: "Inter", sans-serif; /* fonte moderna e legível */
+    background-color: var(--surface); /* cor de fundo suave */
+    color: #191c1e;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
     font-weight: 800;
+    letter-spacing: -0.04em;
+    font-size: 1.5rem;
+}   
+
+.btn-primary {
+    background: linear-gradient(135deg, #004ac6, #2563eb);
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0, 74, 198, 0.15);
 }
 
-.button-nav {
-    --bs-btn-padding-x: 1.5rem;
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(0, 74, 198, 0.2);
 }
+
+.btn-light {
+    background-color: #e6e8ea;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+}
+
+.hero-section {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem); /* fonte de tamanho responsivo */
+    font-weight: 800; /* peso da fonte */
+    line-height: 1.1; /* altura da linha */
+    letter-spacing: -0.02em; /* espaçamento entre letras */
+    margin-bottom: 1.5rem; /* margem inferior para espaçamento */
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--on-surface-variant);
+    max-width: 550px;
+    margin-bottom: 2.5rem;
+}
+
+.label-metadata {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #737686;
+}
+
+.blur-decoration {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 74, 198, 0.08);
+    filter: blur(80px);
+    border-radius: 50%;
+    z-index: -1;
+    top: -50px;
+    right: -50px;
+}
+
+.floating-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    max-width: 280px;
+    z-index: 20;
+}
+
+
