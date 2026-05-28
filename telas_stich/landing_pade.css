@@ -11,8 +11,8 @@
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    background-color: var(--surface);
+    font-family: "Inter", sans-serif; /* fonte moderna e legível */
+    background-color: var(--surface); /* cor de fundo suave */
     color: #191c1e;
     overflow-x: hidden;
 }
@@ -57,11 +57,11 @@ body {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.5rem;
+    font-size: clamp(2.5rem, 5vw, 4.5rem); /* fonte de tamanho responsivo */
+    font-weight: 800; /* peso da fonte */
+    line-height: 1.1; /* altura da linha */
+    letter-spacing: -0.02em; /* espaçamento entre letras */
+    margin-bottom: 1.5rem; /* margem inferior para espaçamento */
 }
 
 .hero-subtitle {
