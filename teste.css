@@ -130,4 +130,55 @@ body {
     color: white;
 }
 
+.product-card {
+    background: var(--surface-container-lowest);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
 
+.badge-discount {
+    background-color: var(--tertiary-container);
+    color: var(--on-tertiary-container);
+    font-weight: 700;
+    font-size: 0.7rem;
+    padding: 0.4em 0.8em;
+    border-radius: 2rem;
+}
+
+
+.material-symbols-outlined {
+    vertical-align: middle;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.chart-container {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.footer {
+    border-top: 1px solid rgba(0,0,0,0.05);
+    background-color: #f2f4f6;
+    padding: 3rem 0;
+}
+.footer-logo {
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin: 0 1rem;
+}
+
+.footer-link:hover {
+    color: var(--bs-primary);
+}
