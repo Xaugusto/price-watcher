@@ -6,3 +6,5 @@
 /telas_stitch
 # ignora a pasta de atividades 
 /atvdd
+# ignora extensão do vscode 
+/vscode-extensions.txt
