@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <link href="https: //fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="login.css">
+
+    <title>PriceWatcher - Login</title>
+</head>
+
+<body>
+    <main class="main-wrapper">
+        <div class="container">
+            <div class="bg-ambient-1"></div>
+            <div class="bg-ambient-2"></div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-5 col-lg-4">
+                    <div class="text-center mb-5 mt-4">
+
+                        <h1 class="display-6 fw-bolder mb-1">PriceWatcher</h1>
+                        <p class="text-uppercase small fw-medium opacity-75 tracking-tight mb-0">
+                            Monitoramento de precisão
+                        </p>
+                    </div>
+                    <div class="card auth-card p-4">
+                        <ul class="nav nav-tabs nav-tabs-custom nav-fill" id="authTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" data-bs-target="#login" data-bs-toggle="tab"
+                                    id="login-tab" role="tab" type="button">
+                                    Loguin
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-target="#signup" data-bs-toggle="tab" id="signup-tab"
+                                    role="tab" type="button">
+                                    Criar Conta
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="authTabContent">
+                            <div class="tab-pane fade show active" id="login" role="tabpanel">
+                                <p class="text-uppercase fw-bold text-muted mb-4"
+                                    style="font-size: 10px; letter-spacing: 0.1em">
+                                    Autenticação Segura
+                                </p>
+                                <form>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control border-0 bg-light" id="loginEmail"
+                                            placeholder="nome@exemplo.com" type="email" />
+                                        <label class="text-muted" for="loginEmail">Endereço de E-mail</label>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <label class="form-label-small mb-0"
+                                                for="loginPassword">Palavra-passe</label>
+                                            <a class="text-primary fw-bold text-decoration-none" href="#"
+                                                style="font-size: 10px">ESQUECI A
+                                                SENHA</a>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input class="form-control border-0 bg-light" id="loginPassword"
+                                                placeholder="Senha" type="password" />
+                                            <label class="text-muted" for="loginPassword">Palavra-passe</label>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 text-white rounded-3 mb-4"
+                                        type="submit">
+                                        Fazer Login
+                                    </button>
+                                    <div class="divider-text">ou continue com</div>
+                                    <div class="row g-3">
+                                        <div class="col-6">
+                                            <button class="btn social-btn w-100 rounded-3" type="button">
+                                                <img alt="" class="w-auto" height="16"
+                                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCx4CJoU_slKBqlOqQs-bdv2ILjMIryqC3rQYjZsBhodrYnf4045fIQm1LgCCmX6OIzhc9BFUGjqG9ZwDQc25apMNnrx2jU-rILsj6crSyrqK3exfqfBklMIebCOr33TG6CvRbQBzR1NtQ_aQqxLlz9r65sgA1XnShtG0cM9BQli12ZwvmiCqQvwACTnOdvqUKKyLFb7tJ_vbAfQeJU0jztG91HYwzpbfn5ZdGvqCrI_pyErZWUqRp2aQruq5tv-VBYuhn-YThk94" />
+                                                Google
+                                            </button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn social-btn w-100 rounded-3" type="button">
+                                                <span class="material-symbols-outlined fs-6">terminal</span>
+                                                GitHub
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="signup" role="tabpanel">
+                                <p class="text-uppercase fw-bold text-muted mb-4"
+                                    style="font-size: 10px; letter-spacing: 0.1em">
+                                    Criar Nova Conta
+                                </p>
+                                <form>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control border-0 bg-light" id="signupName"
+                                            placeholder="Seu Nome" type="text" />
+                                        <label class="text-muted" for="signupName">Nome Completo</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control border-0 bg-light" id="signupEmail"
+                                            placeholder="nome@exemplo.com" type="email" />
+                                        <label class="text-muted" for="signupEmail">E-mail</label>
+                                    </div>
+                                    <div class="form-floating mb-4">
+                                        <input class="form-control border-0 bg-light" id="signupPassword"
+                                            placeholder="Senha" type="password" />
+                                        <label class="text-muted" for="signupPassword">Palavra-passe</label>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 text-white rounded-3" type="submit">
+                                        Registrar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="py-5 px-3">
+        <div class="container">
+            <div class="row align-items-center justify-content-between g-4">
+                <div class="col-12 col-md-auto text-center text-md-start">
+                    <span class="fs-5 fw-black text-dark">PriceWatcher</span>
+                </div>
+                <div class="col-12 col-md-auto">
+                    <div class="d-flex flex-wrap justify-content-center gap-4">
+                        <a class="text-uppercase small fw-bold text-muted text-decoration-none hover-primary"
+                            href="#">Terms</a>
+                        <a class="text-uppercase small fw-bold text-muted text-decoration-none hover-primary"
+                            href="#">Privacy</a>
+                        <a class="text-uppercase small fw-bold text-muted text-decoration-none hover-primary"
+                            href="#">Support</a>
+                        <a class="text-uppercase small fw-bold text-muted text-decoration-none hover-primary"
+                            href="#">API</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-auto text-center text-md-end">
+                    <span class="text-uppercase small fw-medium text-muted opacity-75" style="font-size: 10px">
+                        © 2024 Precision Ledger. All rights reserved.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
