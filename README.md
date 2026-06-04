@@ -3,164 +3,172 @@
 
 ### **Autor:** Augusto Emanuel Pereira
 
-Este projeto tem como objetivo implementar uma aplicaÃ§Ã£o web que permite aos usuÃ¡rios monitorar produtos em diferentes lojas online e receber notificaÃ§Ãµes quando houver queda de preÃ§o.
+Este projeto tem como objetivo implementar uma aplicação web que permite aos usuários monitorar produtos em diferentes lojas online e receber notificações quando houver queda de preço.
 
-A aplicaÃ§Ã£o busca facilitar decisÃµes de compra, permitindo acompanhar o histÃ³rico de preÃ§os, detectar promoÃ§Ãµes reais e evitar falsas ofertas.
+A aplicação busca facilitar decisões de compra, permitindo acompanhar o histórico de preços, detectar promoções reais e evitar falsas ofertas.
 
 O frontend foi desenvolvido com HTML, CSS e JavaScript, enquanto o backend pode ser simulado com uma API Fake utilizando JSON Server (ou integrado futuramente com APIs reais e scraping de dados).
 
 ---
 
-## ðŸ“š DocumentaÃ§Ã£o do Projeto
+## 📚 Documentação do Projeto
 
-Para entender as regras de negÃ³cio, o escopo e a arquitetura tÃ©cnica da aplicaÃ§Ã£o, consulte os documentos abaixo:
+Para entender as regras de negócio, o escopo e a arquitetura técnica da aplicação, consulte os documentos abaixo:
 
-- [ðŸ“„ Product Requirements Document (PRD)](./docs/prd.md) - VisÃ£o geral, funcionalidades e histÃ³rias de usuÃ¡rio.
-- [ðŸ› ï¸ EspecificaÃ§Ã£o TÃ©cnica (Tech Spec)](./docs/spec.md) - Estrutura de dados, rotas da API e arquitetura do sistema.
-
----
-
-## ðŸŽ¨ Design
-
-- [ðŸŽ¨ Design System](./docs/design-system.md) - Identidade visual da aplicaÃ§Ã£o.
-- [ðŸ–¼ï¸ ProtÃ³tipo no Figma](https://www.figma.com/design/gDR2vWH7VWbVcbxkZj9I7S/PriceWatcher?node-id=0-1&t=b1BywPwWQzpRqaQO-1) - Telas interativas.
+- [📄 Product Requirements Document (PRD)](./docs/prd.md) - Visão geral, funcionalidades e histórias de usuário.
+- [🛠️ Especificação Técnica (Tech Spec)](./docs/spec.md) - Estrutura de dados, rotas da API e arquitetura do sistema.
 
 ---
 
-## ðŸŒ Site em ProduÃ§Ã£o - GitHub Pages
+## 🎨 Design
+
+- [🎨 Design System](./docs/design-system.md) - Identidade visual da aplicação.
+- [🖼️ Protótipo no Figma](https://www.figma.com/design/gDR2vWH7VWbVcbxkZj9I7S/PriceWatcher?node-id=0-1&t=b1BywPwWQzpRqaQO-1) - Telas interativas.
+
+---
+
+## 🌐 Site em Produção - GitHub Pages
 
 https://seu-usuario.github.io/price-watcher/
 
 ---
 
-## ðŸ’» Tecnologias e DependÃªncias
+## 💻 Tecnologias e Dependências
 
 - **Frontend:**
   - HTML5
   - CSS3
-  - **Bootstrap 5.3.3** *(Framework CSS escolhido â€” veja justificativa abaixo)*
+  - **Bootstrap 5.3.3** *(Framework CSS escolhido — veja justificativa abaixo)*
   - JavaScript (ES6+)
 
 - **Backend (simulado):**
   - JSON Server `v0.17.4`
 
-- **APIs PÃºblicas Integradas:**
+- **APIs Públicas Integradas:**
   - **Mercado Livre API v1**
   - **Amazon Product Advertising API v5.0 (PA API 5.0)**
 
 - **Bibliotecas:**
   - jQuery `v3.7.1`
-  - Chart.js `v4.4.3` (para grÃ¡ficos de histÃ³rico de preÃ§o)
+  - Chart.js `v4.4.3` (para gráficos de histórico de preço)
   - Bootstrap Icons `v1.11.3`
 
 ---
 
-## ðŸ§  Justificativa das Escolhas TÃ©cnicas
+## 🧠 Justificativa das Escolhas Técnicas
 
-### ðŸŽ¨ Framework CSS â€” Bootstrap 5.3.3
+### 🎨 Framework CSS — Bootstrap 5.3.3
 
-O **Bootstrap** foi escolhido como framework CSS apÃ³s anÃ¡lise comparativa com alternativas como Tailwind CSS e Materialize CSS, com base nos seguintes critÃ©rios:
+O **Bootstrap** foi escolhido como framework CSS após análise comparativa com alternativas como Tailwind CSS e Materialize CSS, com base nos seguintes critérios:
 
-| CritÃ©rio | Bootstrap 5.3.3 | Tailwind CSS | Materialize CSS |
+| Critério | Bootstrap 5.3.3 | Tailwind CSS | Materialize CSS |
 |---|---|---|---|
-| â­ Stars no GitHub | ~170k | ~82k | ~39k |
-| ðŸ“¦ Componentes prontos | âœ… Cards, Modais, Toasts | âŒ Utility-first | âœ… Limitados |
-| ðŸ“± Responsividade | âœ… Grid 12 colunas | âœ… | âœ… |
-| ðŸ“… ManutenÃ§Ã£o ativa | âœ… AtualizaÃ§Ãµes frequentes | âœ… | âš ï¸ Lento |
-| ðŸ“– DocumentaÃ§Ã£o | âœ… Extensa e em PT-BR | âœ… | âœ… |
+| ⭐ Stars no GitHub | ~170k | ~82k | ~39k |
+| 📦 Componentes prontos | ✅ Cards, Modais, Toasts | ❌ Utility-first | ✅ Limitados |
+| 📱 Responsividade | ✅ Grid 12 colunas | ✅ | ✅ |
+| 📅 Manutenção ativa | ✅ Atualizações frequentes | ✅ | ⚠️ Lento |
+| 📖 Documentação | ✅ Extensa e em PT-BR | ✅ | ✅ |
 
 **Por que Bootstrap para o Price Watcher?**
-- O sistema de **grid responsivo de 12 colunas** garante que os cards de produtos se adaptem perfeitamente a dispositivos mÃ³veis e desktops, atendendo diretamente ao **ID 01 e ID 02**.
-- Componentes prontos como **Cards**, **Modais**, **Badges de preÃ§o** e **Toasts de notificaÃ§Ã£o** aceleram o desenvolvimento (**ID 04**).
-- O Bootstrap 5 nÃ£o depende de jQuery, tornando o projeto mais leve e moderno.
+- O sistema de **grid responsivo de 12 colunas** garante que os cards de produtos se adaptem perfeitamente a dispositivos móveis e desktops, atendendo diretamente ao **ID 01 e ID 02**.
+- Componentes prontos como **Cards**, **Modais**, **Badges de preço** e **Toasts de notificação** aceleram o desenvolvimento (**ID 04**).
+- O Bootstrap 5 não depende de jQuery, tornando o projeto mais leve e moderno.
 
 ---
 
-### ðŸ”Œ APIs PÃºblicas â€” Mercado Livre & Amazon
+### 🔌 APIs Públicas — Mercado Livre & Amazon
 
-#### ðŸ›’ Mercado Livre API v1
-- **DocumentaÃ§Ã£o:** [developers.mercadolibre.com.br](https://developers.mercadolibre.com.br)
-- **AutenticaÃ§Ã£o:** OAuth 2.0 (token de acesso gratuito)
+#### 🛒 Mercado Livre API v1
+- **Documentação:** [developers.mercadolibre.com.br](https://developers.mercadolibre.com.br)
+- **Autenticação:** OAuth 2.0 (token de acesso gratuito)
 
-> O Mercado Livre Ã© a maior plataforma de e-commerce da AmÃ©rica Latina. Sua API pÃºblica Ã© gratuita, bem documentada e retorna dados em JSON com preÃ§o, histÃ³rico e URLs â€” ideal para monitoramento de preÃ§os em tempo real (**IDs 17, 18 e 19**).
+> O Mercado Livre é a maior plataforma de e-commerce da América Latina. Sua API pública é gratuita, bem documentada e retorna dados em JSON com preço, histórico e URLs — ideal para monitoramento de preços em tempo real (**IDs 17, 18 e 19**).
 
-#### ðŸ“¦ Amazon PA API v5.0
-- **DocumentaÃ§Ã£o:** [webservices.amazon.com/paapi5](https://webservices.amazon.com/paapi5/documentation/)
-- **AutenticaÃ§Ã£o:** AWS Signature v4
+#### 📦 Amazon PA API v5.0
+- **Documentação:** [webservices.amazon.com/paapi5](https://webservices.amazon.com/paapi5/documentation/)
+- **Autenticação:** AWS Signature v4
 
-> Integrar a Amazon permite comparar preÃ§os entre o mercado nacional e internacional, enriquecendo a funcionalidade de **ComparaÃ§Ã£o entre Lojas** do sistema.
-
----
-
-## âš™ï¸ Funcionalidades
-
-- ðŸ”Ž Cadastro de produtos via link ou nome
-- ðŸ“‰ Monitoramento automÃ¡tico de preÃ§os
-- ðŸ”” NotificaÃ§Ãµes de queda de preÃ§o (Bootstrap Toasts)
-- ðŸ“Š HistÃ³rico de preÃ§os com grÃ¡ficos (Chart.js)
-- ðŸ›’ ComparaÃ§Ã£o entre lojas (Mercado Livre vs Amazon)
-- â­ Lista de desejos
-- ðŸš¨ DetecÃ§Ã£o de falsas promoÃ§Ãµes
+> Integrar a Amazon permite comparar preços entre o mercado nacional e internacional, enriquecendo a funcionalidade de **Comparação entre Lojas** do sistema.
 
 ---
 
-## âœ… Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
+## ⚙️ Funcionalidades
 
-#### RA1 - Utilizar Frameworks CSS para estilizaÃ§Ã£o de elementos HTML e criaÃ§Ã£o de layouts responsivos.
-
-- [x] ID 01 - Prototipa interfaces adaptÃ¡veis para no mÃ­nimo os tamanhos de tela mobile e desktop, usando ferramentas de design tradicionais (Figma, Quant UX ou Sketch) ou IA (Stitch).
-- [x] ID 02 - Implementa layout responsivo com Framework CSS (Bootstrap, Materialize, Tailwind + DaisyUI) usando Flexbox ou Grid do prÃ³prio framework.
-- [x] ID 03 - Implementa layout responsivo com CSS puro, usando Flexbox ou Grid Layout.
-- [x] ID 04 - Utiliza componentes prontos de um Framework CSS (ex.: card, button) e componentes JavaScript do framework (ex.: modal, carousel).
-- [x] ID 05 - Cria layout fluido usando unidades relativas (vw, vh, %, em, rem) no lugar de unidades fixas (px).
-- [x] ID 06 - Aplica um Design System consistente (cores, tipografia, padrÃµes de componentes) em toda a aplicaÃ§Ã£o.
-- [x] ID 07 - Utiliza Sass (SCSS) com ou sem framework, aplicando variÃ¡veis, mixins e funÃ§Ãµes para modularizar o cÃ³digo.
-- [x] ID 08 - Aplica tipografia responsiva (media queries mobile first) ou tipografia fluida (funÃ§Ã£o clamp() + unidades relativas).
-- [x] ID 09 - Aplica tÃ©cnicas de responsividade de imagens usando CSS (object-fit, containers com unidades relativas).
-- [x] ID 10 - Otimiza imagens usando formatos modernos (WebP) e carregamento adaptativo (srcset, picture, ou parÃ¢metros do Cloudinary).
-
-#### RA2 - Realizar tratamento de formulÃ¡rios e aplicar validaÃ§Ãµes customizadas no lado cliente.
-
-- [ ] ID 11 - Implementa validaÃ§Ã£o HTML nativa (campos obrigatÃ³rios, tipos, limites de caracteres) com mensagens de erro/sucesso no lado cliente.
-- [ ] ID 12 - Aplica expressÃµes regulares (REGEX) para validaÃ§Ãµes customizadas (e-mail, telefone, datas, etc.)
-- [ ] ID 13 - Utiliza elementos de seleÃ§Ã£o em formulÃ¡rios (checkbox, radio, select) para coleta de dados.
-- [ ] ID 14 - Implementa leitura e escrita no Web Storage (localStorage/sessionStorage) para persistir dados localmente.
-
-#### RA3 - Aplicar ferramentas para otimizaÃ§Ã£o do processo de desenvolvimento web.
-
-- [ ] ID 15 - Configura ambiente com Node.js e NPM para gerenciamento de pacotes e dependÃªncias.
-- [ ] ID 16 - Utiliza boas prÃ¡ticas de versionamento no Git/GitHub (branch main ou branches especÃ­ficos, uso de .gitignore).
-- [ ] ID 17 - MantÃ©m um README.md padronizado, conforme template da disciplina, com checklist preenchido.
-- [ ] ID 18 - Organiza arquivos do projeto de forma modular, seguindo padrÃ£o de exemplo fornecido.
-- [ ] ID 19 - Configura linters e formatadores (ESLint, Prettier) para manter qualidade e padronizaÃ§Ã£o do cÃ³digo.
-
-#### RA4 - Aplicar bibliotecas de funÃ§Ãµes e componentes em JavaScript para aprimorar a interatividade de pÃ¡ginas web.
-
-- [ ] ID 20 - Utiliza jQuery para manipulaÃ§Ã£o do DOM e interatividade (eventos, animaÃ§Ãµes, manipulaÃ§Ã£o de elementos)
-- [ ] ID 21 - Integra e configura um plugin jQuery relevante (ex.: jQuery Mask Plugin).
-
-#### RA5 - Efetuar requisiÃ§Ãµes assÃ­ncronas para uma API fake e APIs pÃºblicas, permitindo a obtenÃ§Ã£o e manipulaÃ§Ã£o de dados dinamicamente.
-
-- [ ] ID 22 - Realiza requisiÃ§Ãµes assÃ­ncronas para uma API fake (ex.: JSON Server) para persistir dados de um formulÃ¡rio.
-- [ ] ID 23 - Realiza requisiÃ§Ãµes assÃ­ncronas para uma API fake para exibir dados na pÃ¡gina.
-- [ ] ID 24 - Realiza requisiÃ§Ãµes assÃ­ncronas para APIs pÃºblicas reais (OpenWeather, ViaCEP etc.), exibindo os dados e tratando erros.
+- 🔎 Cadastro de produtos via link ou nome
+- 📉 Monitoramento automático de preços
+- 🔔 Notificações de queda de preço (Bootstrap Toasts)
+- 📊 Histórico de preços com gráficos (Chart.js)
+- 🛒 Comparação entre lojas (Mercado Livre vs Amazon)
+- ⭐ Lista de desejos
+- 🚨 Detecção de falsas promoções
 
 ---
 
-## ðŸš€ Manual de execuÃ§Ã£o
+## ✅ Checklist | Indicadores de Desempenho (ID)
 
-**Clonar o repositÃ³rio:**
+#### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
+
+- [x] ID 01 - Prototipar interfaces responsivas  (mobile e desktop)
+  > ✔️ Protótipo criado no **Stitch** com telas de Home, Lista de Produtos, Detalhes e Alertas — versões mobile e desktop. [Ver protótipo](https://stitch.withgoogle.com/projects/1963391761961224150)
+- [x] ID 02 - Implementar layout com Bootstrap 5
+  > ✔️ **Bootstrap v5.3.3** instalado via NPM (`npm install bootstrap@5.3.3`). Integrado ao projeto como dependência oficial no `package.json`.
+- [ ] ID 03 - Utilizar Flexbox ou Grid
+- [ ] ID 04 - Utilizar componentes prontos (cards, modais, botões, toasts)
+- [ ] ID 05 - Usar unidades relativas (% , rem, vh, vw)
+- [ ] ID 06 - Aplicar Design System consistente
+
+---
+
+#### RA2 - Tratamento de formulários
+
+- [ ] ID 07 - Validação de campos obrigatórios
+- [ ] ID 08 - Validações com REGEX
+- [ ] ID 09 - Uso de inputs (checkbox, select, etc.)
+- [ ] ID 10 - Uso de localStorage
+
+---
+
+#### RA3 - Otimização do desenvolvimento
+
+- [x] ID 11 - Uso de Node.js e NPM
+  > ✔️ Ambiente criado com **Node.js v20.x (LTS)**. Dependências instaladas via NPM: `bootstrap@5.3.3`, `jquery@3.7.1`, `chart.js@4.4.3`, `bootstrap-icons@1.11.3`, `json-server@0.17.4`. Arquivo `package.json` gerado e versionado.
+- [x] ID 12 - Versionamento com Git
+  > ✔️ Repositório inicializado com `git init`. `.gitignore` configurado (node_modules, .env). Commits realizados com mensagens descritivas.
+- [x] ID 13 - README padronizado
+  > ✔️ README com seções de apresentação, tecnologias com justificativas, design, checklist e manual de execução.
+- [ ] ID 14 - Organização modular de arquivos
+
+---
+
+#### RA4 - Interatividade com JavaScript
+
+- [ ] ID 15 - Manipulação do DOM
+- [ ] ID 16 - Eventos e animações
+
+---
+
+#### RA5 - Requisições assíncronas
+
+- [ ] ID 17 - Requisições para API Fake (JSON Server)
+- [ ] ID 18 - Exibição dinâmica de dados
+- [ ] ID 19 - Integração com APIs externas (Mercado Livre e Amazon)
+
+---
+
+## 🚀 Manual de execução
+
+**Clonar o repositório:**
 ```bash
 git clone https://github.com/seu-usuario/price-watcher.git
 cd price-watcher
 ```
 
-**Instalar dependÃªncias:**
+**Instalar dependências:**
 ```bash
 npm install
 ```
 
-> As seguintes dependÃªncias serÃ£o instaladas automaticamente:
+> As seguintes dependências serão instaladas automaticamente:
 > - `bootstrap@5.3.3`
 > - `bootstrap-icons@1.11.3`
 > - `jquery@3.7.1`
@@ -174,12 +182,12 @@ npx json-server --watch db.json --port 3001
 
 **Abrir o projeto:**
 ```bash
-# Abra o index.html no navegador ou use a extensÃ£o Live Server (VS Code)
+# Abra o index.html no navegador ou use a extensão Live Server (VS Code)
 ```
 
 ---
 
-## ðŸ”‘ VariÃ¡veis de Ambiente
+## 🔑 Variáveis de Ambiente
 
 Crie um arquivo `.env` na raiz do projeto com suas credenciais:
 
@@ -194,4 +202,4 @@ AMAZON_SECRET_KEY=sua_secret_key
 AMAZON_PARTNER_TAG=seu_partner_tag
 ```
 
-> âš ï¸ Nunca suba o arquivo `.env` para o repositÃ³rio. Ele jÃ¡ estÃ¡ listado no `.gitignore`.
+> ⚠️ Nunca suba o arquivo `.env` para o repositório. Ele já está listado no `.gitignore`.
