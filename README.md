@@ -108,16 +108,16 @@ O **Bootstrap** foi escolhido como framework CSS apÃ³s anÃ¡lise comparativa 
 
 #### RA1 - Utilizar Frameworks CSS para estilizaÃ§Ã£o de elementos HTML e criaÃ§Ã£o de layouts responsivos.
 
-- [ ] ID 01 - Prototipa interfaces adaptÃ¡veis para no mÃ­nimo os tamanhos de tela mobile e desktop, usando ferramentas de design tradicionais (Figma, Quant UX ou Sketch) ou IA (Stitch).
-- [ ] ID 02 - Implementa layout responsivo com Framework CSS (Bootstrap, Materialize, Tailwind + DaisyUI) usando Flexbox ou Grid do prÃ³prio framework.
-- [ ] ID 03 - Implementa layout responsivo com CSS puro, usando Flexbox ou Grid Layout.
-- [ ] ID 04 - Utiliza componentes prontos de um Framework CSS (ex.: card, button) e componentes JavaScript do framework (ex.: modal, carousel).
-- [ ] ID 05 - Cria layout fluido usando unidades relativas (vw, vh, %, em, rem) no lugar de unidades fixas (px).
-- [ ] ID 06 - Aplica um Design System consistente (cores, tipografia, padrÃµes de componentes) em toda a aplicaÃ§Ã£o.
-- [ ] ID 07 - Utiliza Sass (SCSS) com ou sem framework, aplicando variÃ¡veis, mixins e funÃ§Ãµes para modularizar o cÃ³digo.
-- [ ] ID 08 - Aplica tipografia responsiva (media queries mobile first) ou tipografia fluida (funÃ§Ã£o clamp() + unidades relativas).
-- [ ] ID 09 - Aplica tÃ©cnicas de responsividade de imagens usando CSS (object-fit, containers com unidades relativas).
-- [ ] ID 10 - Otimiza imagens usando formatos modernos (WebP) e carregamento adaptativo (srcset, picture, ou parÃ¢metros do Cloudinary).
+- [x] ID 01 - Prototipa interfaces adaptÃ¡veis para no mÃ­nimo os tamanhos de tela mobile e desktop, usando ferramentas de design tradicionais (Figma, Quant UX ou Sketch) ou IA (Stitch).
+- [x] ID 02 - Implementa layout responsivo com Framework CSS (Bootstrap, Materialize, Tailwind + DaisyUI) usando Flexbox ou Grid do prÃ³prio framework.
+- [x] ID 03 - Implementa layout responsivo com CSS puro, usando Flexbox ou Grid Layout.
+- [x] ID 04 - Utiliza componentes prontos de um Framework CSS (ex.: card, button) e componentes JavaScript do framework (ex.: modal, carousel).
+- [x] ID 05 - Cria layout fluido usando unidades relativas (vw, vh, %, em, rem) no lugar de unidades fixas (px).
+- [x] ID 06 - Aplica um Design System consistente (cores, tipografia, padrÃµes de componentes) em toda a aplicaÃ§Ã£o.
+- [x] ID 07 - Utiliza Sass (SCSS) com ou sem framework, aplicando variÃ¡veis, mixins e funÃ§Ãµes para modularizar o cÃ³digo.
+- [x] ID 08 - Aplica tipografia responsiva (media queries mobile first) ou tipografia fluida (funÃ§Ã£o clamp() + unidades relativas).
+- [x] ID 09 - Aplica tÃ©cnicas de responsividade de imagens usando CSS (object-fit, containers com unidades relativas).
+- [x] ID 10 - Otimiza imagens usando formatos modernos (WebP) e carregamento adaptativo (srcset, picture, ou parÃ¢metros do Cloudinary).
 
 #### RA2 - Realizar tratamento de formulÃ¡rios e aplicar validaÃ§Ãµes customizadas no lado cliente.
 
