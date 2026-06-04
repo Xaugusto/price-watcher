@@ -1,0 +1,72 @@
+// 1. Funções do Bootstrap
+@import "../../node_modules/bootstrap/scss/functions";
+
+// 2. Cores Oficiais do Bootstrap
+$primary:       #004ac6;
+$secondary:     #434655;
+$success:       #006242;
+$danger:        #dc3545;
+$warning:       #ffc107;
+$info:          #0dcaf0;
+$light:         #FFFFFF;
+$dark:          #191c1e;
+
+$body-bg:       #f7f9fb;
+$body-color:    #191c1e;
+
+$navbar-light-color:        #434655;
+$navbar-light-hover-color: #004ac6;
+$navbar-light-active-color: #004ac6;
+
+// 3. Cores Custom (Material Design) - ANTES do Bootstrap
+$surface:                   #f7f9fb;
+$surface-container_low:     #f2f4f6;
+$surface_container_lowest:   #ffffff;
+$on_surface_variant:        #434655;
+$tertiary:                  #006242;
+$tertiary_container:       #bdffdb;
+$on_tertiary_container:    #002113;
+$nav_bar_bg:                #FFFFFF;
+
+// ==========================================
+// 4. Imports do Bootstrap
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// ==========================================
+// 5. CSS com Variáveis SCSS
+body {
+    font-family: "Inter", sans-serif; 
+    background-color: #{$surface};
+}
+
+.navbar {
+    background-color: #{$nav_bar_bg};
+}
+
+.hero-subtitle {
+    color: #{$on_surface_variant};
+}
+
+.feature-card {
+    background: #{$surface_container_lowest};
+}
+
+.integration-tag {
+    background: #{$surface};
+}
+
+.product-card {
+    background: #{$surface_container_lowest};
+}
+
+.badge-discount {
+    background-color: #{$tertiary_container};
+    color: #{$on_tertiary_container};
+}
+
+.footer-link:hover {
+    color: #{$primary};
+}
