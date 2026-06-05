@@ -63,15 +63,10 @@ body {
 
 .hero-title {
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    /* fonte de tamanho responsivo */
     font-weight: 800;
-    /* peso da fonte */
     line-height: 1.1;
-    /* altura da linha */
     letter-spacing: -0.02em;
-    /* espaçamento entre letras */
     margin-bottom: 1.5rem;
-    /* margem inferior para espaçamento */
 }
 
 .hero-subtitle {
