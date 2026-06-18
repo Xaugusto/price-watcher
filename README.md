@@ -38,36 +38,38 @@ https://seu-usuario.github.io/price-watcher/
 - **Frontend:**
   - HTML5
   - CSS3
-  - **Bootstrap 5.3.3** *(Framework CSS escolhido — veja justificativa abaixo)*
+  - **Sass (SCSS)** *(Compilado para custom.css)*
+  - **Bootstrap 5.3.8** *(Framework CSS escolhido — veja justificativa abaixo)*
   - JavaScript (ES6+)
 
 - **Backend (simulado):**
   - JSON Server `v0.17.4`
 
-- **APIs Públicas Integradas:**
-  - **Mercado Livre API v1**
+- **APIs Públicas Integradas / Serviços:**
   - **Amazon Product Advertising API v5.0 (PA API 5.0)**
+  - **Cloudinary** *(Para hospedagem e otimização de imagens em formato moderno WebP)*
 
-- **Bibliotecas:**
+- **Bibliotecas e Pacotes:**
   - jQuery `v3.7.1`
   - Chart.js `v4.4.3` (para gráficos de histórico de preço)
-  - Bootstrap Icons `v1.11.3`
+  - Bootstrap Icons `v1.13.1`
+  - Material Symbols `v0.44.4`
 
 ---
 
 ## 🧠 Justificativa das Escolhas Técnicas
 
-### 🎨 Framework CSS — Bootstrap 5.3.3
+### 🎨 Framework CSS — Bootstrap 5.3.8
 
 O **Bootstrap** foi escolhido como framework CSS após análise comparativa com alternativas como Tailwind CSS e Materialize CSS, com base nos seguintes critérios:
 
-| Critério | Bootstrap 5.3.3 | Tailwind CSS | Materialize CSS |
-|---|---|---|---|
-| ⭐ Stars no GitHub | ~170k | ~82k | ~39k |
-| 📦 Componentes prontos | ✅ Cards, Modais, Toasts | ❌ Utility-first | ✅ Limitados |
-| 📱 Responsividade | ✅ Grid 12 colunas | ✅ | ✅ |
-| 📅 Manutenção ativa | ✅ Atualizações frequentes | ✅ | ⚠️ Lento |
-| 📖 Documentação | ✅ Extensa e em PT-BR | ✅ | ✅ |
+| Critério              | Bootstrap 5.3.8           | Tailwind CSS    | Materialize CSS |
+| --------------------- | ------------------------- | --------------- | --------------- |
+| ⭐ Stars no GitHub     | ~170k                     | ~82k            | ~39k            |
+| 📦 Componentes prontos | ✅ Cards, Modais, Toasts   | ❌ Utility-first | ✅ Limitados     |
+| 📱 Responsividade      | ✅ Grid 12 colunas         | ✅               | ✅               |
+| 📅 Manutenção ativa    | ✅ Atualizações frequentes | ✅               | ⚠️ Lento         |
+| 📖 Documentação        | ✅ Extensa e em PT-BR      | ✅               | ✅               |
 
 **Por que Bootstrap para o Price Watcher?**
 - O sistema de **grid responsivo de 12 colunas** garante que os cards de produtos se adaptem perfeitamente a dispositivos móveis e desktops, atendendo diretamente ao **ID 01 e ID 02**.
@@ -76,19 +78,13 @@ O **Bootstrap** foi escolhido como framework CSS após análise comparativa com 
 
 ---
 
-### 🔌 APIs Públicas — Mercado Livre & Amazon
-
-#### 🛒 Mercado Livre API v1
-- **Documentação:** [developers.mercadolibre.com.br](https://developers.mercadolibre.com.br)
-- **Autenticação:** OAuth 2.0 (token de acesso gratuito)
-
-> O Mercado Livre é a maior plataforma de e-commerce da América Latina. Sua API pública é gratuita, bem documentada e retorna dados em JSON com preço, histórico e URLs — ideal para monitoramento de preços em tempo real (**IDs 17, 18 e 19**).
+### 🔌 APIs Públicas — Amazon
 
 #### 📦 Amazon PA API v5.0
 - **Documentação:** [webservices.amazon.com/paapi5](https://webservices.amazon.com/paapi5/documentation/)
 - **Autenticação:** AWS Signature v4
 
-> Integrar a Amazon permite comparar preços entre o mercado nacional e internacional, enriquecendo a funcionalidade de **Comparação entre Lojas** do sistema.
+> Integrar a Amazon permite monitorar e comparar preços de produtos na Amazon, enriquecendo a funcionalidade de acompanhamento de preços do sistema.
 
 ---
 
@@ -98,7 +94,7 @@ O **Bootstrap** foi escolhido como framework CSS após análise comparativa com 
 - 📉 Monitoramento automático de preços
 - 🔔 Notificações de queda de preço (Bootstrap Toasts)
 - 📊 Histórico de preços com gráficos (Chart.js)
-- 🛒 Comparação entre lojas (Mercado Livre vs Amazon)
+- 🛒 Comparação de preços na Amazon
 - ⭐ Lista de desejos
 - 🚨 Detecção de falsas promoções
 
@@ -121,17 +117,17 @@ O **Bootstrap** foi escolhido como framework CSS após análise comparativa com 
 
 #### RA2 - Realizar tratamento de formulários e aplicar validações customizadas no lado cliente.
 
-- [ ] ID 11 - Implementa validação HTML nativa (campos obrigatórios, tipos, limites de caracteres) com mensagens de erro/sucesso no lado cliente.
+- [x] ID 11 - Implementa validação HTML nativa (campos obrigatórios, tipos, limites de caracteres) com mensagens de erro/sucesso no lado cliente.
 - [ ] ID 12 - Aplica expressões regulares (REGEX) para validações customizadas (e-mail, telefone, datas, etc.)
 - [ ] ID 13 - Utiliza elementos de seleção em formulários (checkbox, radio, select) para coleta de dados.
 - [ ] ID 14 - Implementa leitura e escrita no Web Storage (localStorage/sessionStorage) para persistir dados localmente.
 
 #### RA3 - Aplicar ferramentas para otimização do processo de desenvolvimento web.
 
-- [ ] ID 15 - Configura ambiente com Node.js e NPM para gerenciamento de pacotes e dependências.
-- [ ] ID 16 - Utiliza boas práticas de versionamento no Git/GitHub (branch main ou branches específicos, uso de .gitignore).
-- [ ] ID 17 - Mantém um README.md padronizado, conforme template da disciplina, com checklist preenchido.
-- [ ] ID 18 - Organiza arquivos do projeto de forma modular, seguindo padrão de exemplo fornecido.
+- [x] ID 15 - Configura ambiente com Node.js e NPM para gerenciamento de pacotes e dependências.
+- [x] ID 16 - Utiliza boas práticas de versionamento no Git/GitHub (branch main ou branches específicos, uso de .gitignore).
+- [x] ID 17 - Mantém um README.md padronizado, conforme template da disciplina, com checklist preenchido.
+- [x] ID 18 - Organiza arquivos do projeto de forma modular, seguindo padrão de exemplo fornecido.
 - [ ] ID 19 - Configura linters e formatadores (ESLint, Prettier) para manter qualidade e padronização do código.
 
 #### RA4 - Aplicar bibliotecas de funções e componentes em JavaScript para aprimorar a interatividade de páginas web.
@@ -161,11 +157,11 @@ npm install
 ```
 
 > As seguintes dependências serão instaladas automaticamente:
-> - `bootstrap@5.3.3`
-> - `bootstrap-icons@1.11.3`
+> - `bootstrap@5.3.8`
+> - `bootstrap-icons@1.13.1`
 > - `jquery@3.7.1`
-> - `chart.js@4.4.3`
-> - `json-server@0.17.4`
+> - `material-symbols@0.44.4`
+> - `cloudinary@2.10.0`
 
 **Iniciar o JSON Server (API Fake):**
 ```bash
@@ -184,10 +180,6 @@ npx json-server --watch db.json --port 3001
 Crie um arquivo `.env` na raiz do projeto com suas credenciais:
 
 ```env
-# Mercado Livre
-ML_CLIENT_ID=seu_client_id
-ML_CLIENT_SECRET=seu_client_secret
-
 # Amazon PA API
 AMAZON_ACCESS_KEY=sua_access_key
 AMAZON_SECRET_KEY=sua_secret_key
