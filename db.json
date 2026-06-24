@@ -1,0 +1,19 @@
+{
+  "user": [
+    {
+      "nome": "augusto emaul",
+      "email": "augustoemanuel2007@alunos.utfpr.edu.br",
+      "telefone": "42988254596",
+      "senha": "123",
+      "id": "6rWNdl2ybH4"
+    },
+    {
+      "nome": "AUGUSTO EMANUEL PEREIRA",
+      "email": "augustoemanuel@alunos.utfpr.edu.br",
+      "telefone": "40028922",
+      "senha": "123456",
+      "id": "gyyk1h8JlyI"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

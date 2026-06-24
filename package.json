@@ -25,6 +25,7 @@
     "bootstrap-icons": "^1.13.1",
     "cloudinary": "^2.10.0",
     "jquery": "^3.7.1",
+    "json-server": "^1.0.0-beta.15",
     "material-symbols": "^0.44.4"
   },
   "keywords": []
