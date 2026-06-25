@@ -1,8 +1,10 @@
 const cadastroNome = document.getElementById('signupName');
 const cadastroEmail = document.getElementById('signupEmail');
+const cadastroTelefone = document.getElementById('signupPhone');
 const cadastroSenha = document.getElementById('signupPassword');
 const erroNomeCadastro = document.getElementById('erroNomeCadastro');
 const erroEmailCadastro = document.getElementById('erroEmailCadastro');
+const erroTelefoneCadastro = document.getElementById('erroTelefoneCadastro');
 const erroSenhaCadastro = document.getElementById('erroSenhaCadastro');
 const cadastroButton = document.getElementById('Cadastrar');
 
@@ -19,11 +21,21 @@ function ValidarEmail() {
     if (cadastroEmail.value == '') {
         erroEmailCadastro.textContent = 'O email é obrigatório'
     }
-    else if(!cadastroEmail.validity.valid){
+    else if (!cadastroEmail.validity.valid) {
         erroEmailCadastro.textContent = 'Digite um email válido'
     }
     else {
         erroEmailCadastro.textContent = ''
+    }
+}
+
+function ValidarTelefone() {
+    $('#signupPhone').mask('(00) 00000-0000')
+    if (cadastroTelefone.value.trim() == '') {
+        erroTelefoneCadastro.textContent = 'A senha é obrigatório'
+    }
+    else {
+        erroTelefoneCadastro.textContent = ''
     }
 }
 
@@ -51,6 +63,11 @@ cadastroNome.addEventListener('input', () => {
 
 cadastroEmail.addEventListener('input', () => {
     ValidarEmail();
+    atualizarBotaoCadastro();
+});
+
+cadastroTelefone.addEventListener('input', () => {
+    ValidarTelefone();
     atualizarBotaoCadastro();
 });
 

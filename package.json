@@ -28,5 +28,8 @@
     "json-server": "^1.0.0-beta.15",
     "material-symbols": "^0.44.4"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {
+    "@types/jquery": "^4.0.1"
+  }
 }

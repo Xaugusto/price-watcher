@@ -13,6 +13,13 @@
       "telefone": "40028922",
       "senha": "123456",
       "id": "gyyk1h8JlyI"
+    },
+    {
+      "nome": "AUGUSTO EMANUEL PEREIRA",
+      "email": "augustoemanuel2007@gmail.com",
+      "telefone": "(42) 98825-4596",
+      "senha": "123456",
+      "id": "cC3lUypMkwM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
