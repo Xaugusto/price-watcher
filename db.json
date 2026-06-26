@@ -62,6 +62,16 @@
       "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
       "id_user": "gyyk1h8JlyI",
       "id": "tvV9Cy3eNHs"
+    },
+    {
+      "url": "https://www.amazon.com.br/PlayStation%C2%AE5-Slim-Digital-825GB-Turismo/dp/B0FPGF9J2J/?_encoding=UTF8&pd_rd_w=lOZwE&content-id=amzn1.sym.61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_p=61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_r=RT5GEGDCNPAXAG3Y8CNT&pd_rd_wg=Aadph&pd_rd_r=2d9e8758-7b1d-4cce-98c4-f06e2c785a99&ref_=pd_hp_d_atf_dealz_cs",
+      "id_amazon": "B0FPGF9J2J",
+      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+      "preco": "3.699,90",
+      "meta": "120",
+      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "d99n6XHBezQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
