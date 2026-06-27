@@ -1,11 +1,6 @@
-export default class Prod {
-    url;
-    id_amazon;
-    nome;
-    preco;
-    meta;
-    imagem;
+export default class Products {
     id_user;
+    products;
 
     constructor() {
         this.id_user = (JSON.parse(sessionStorage.getItem('usuarioLogado')))?.id ?? false;
@@ -19,11 +14,30 @@ export default class Prod {
         if (products.length == 0) {
             return false;
         }
-
+        this.products = products;
         return products;
     }
 
+    async removerProduto(i) {
+        if (!this.products[i]) return false;
+
+        const id = this.products[i].id;
+
+        await fetch(`http://localhost:3000/product/${id}`, {
+            method: 'DELETE'
+        });
+
+        // atualiza cache interno
+        this.products = this.products.filter(p => p.id !== id);
+
+        return true;
+    }
+
     renderizarProd1(products, i) {
+        if (!products[i]) {
+            document.getElementById('product-1').innerHTML = '';
+            return
+        }
         document.getElementById('product-1').innerHTML = `
                 <div class="card h-100 price-reached overflow-hidden">
                     <div class="row g-0 h-100">
@@ -66,13 +80,14 @@ export default class Prod {
                                         Editar
                                     </button>
                                     <button
+                                        onclick="removerProduct(${i})"
                                         class="btn btn-link text-danger text-decoration-none fw-bold p-0 small text-uppercase">
                                         <span class="material-symbols-outlined fs-6 align-middle">delete</span>
                                         Remover
                                     </button>
                                 </div>
                                 <button class="btn btn-primary px-4 fw-bold text-uppercase small w-100 w-md-auto">
-                                    Ir para loja
+                                    <a href="${products[i].url}" class="link text-white text-decoration-none">Ir para loja</a>
                                 </button>
                             </div>
                         </div>
@@ -83,6 +98,10 @@ export default class Prod {
     }
 
     renderizarProd2(products, i) {
+        if (!products[i]) {
+            document.getElementById('product-1').innerHTML = '';
+            return
+        }
         document.getElementById('product-2').innerHTML = `
                 <div class="card h100 overflow-hidden">
                     <img class="card-img-top" style="height: 180px; object-fit: cover"
@@ -105,7 +124,7 @@ export default class Prod {
                         <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
                             <div class="d-flex gap-3 text-muted">
                                 <span class="material-symbols-outlined cursor-pointer">edit</span>
-                                <span class="material-symbols-outlined cursor-pointer">delete</span>
+                                <span onclick="removerProduct(${i})" class="material-symbols-outlined cursor-pointer">delete</span>
                             </div>
                             <span
                                 class="badge bg-secondary bg-opacity-10 text-secondary text-uppercase py-1 px-2 small">Monitorando</span>
@@ -115,6 +134,10 @@ export default class Prod {
     }
 
     renderizarProd3(products, i) {
+        if (!products[i]) {
+            document.getElementById('product-3').innerHTML = '';
+            return
+        }
         document.getElementById('product-3').innerHTML = `
                 <div class=" card h100 overflow-hidden">
                     <img class="card-img-top" style="height: 180px; object-fit: cover"
@@ -137,7 +160,7 @@ export default class Prod {
                         <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
                             <div class="d-flex gap-3 text-muted">
                                 <span class="material-symbols-outlined cursor-pointer">edit</span>
-                                <span class="material-symbols-outlined cursor-pointer">delete</span>
+                                <span onclick="removerProduct(${i})" class="material-symbols-outlined cursor-pointer">delete</span>
                             </div>
                             <span
                                 class="badge bg-secondary bg-opacity-10 text-secondary text-uppercase py-1 px-2 small">Monitorando</span>
@@ -148,6 +171,10 @@ export default class Prod {
     }
 
     renderizarProd4(products, i) {
+        if (!products[i]) {
+            document.getElementById('product-4').innerHTML = '';
+            return
+        }
         document.getElementById('product-4').innerHTML = `
             <div class="card price-reached h-100 overflow-hidden">
                     <div class="row g-0 h-100">
@@ -180,7 +207,7 @@ export default class Prod {
                             <div class="d-flex justify-content-between align-items-center mt-4 border-top">
                                 <div class="d-flex gap-3 mt-4">
                                     <span class="material-symbols-outlined text-muted cursor-pointer">edit</span>
-                                    <span class="material-symbols-outlined text-muted cursor-pointer">delete</span>
+                                    <span onclick="removerProduct(${i})" class="material-symbols-outlined text-muted cursor-pointer">delete</span>
                                 </div>
                                 <div class="mt-4">
                                     <button class="btn btn-outline-primary btn-sm fw-bold text-uppercase px-4">

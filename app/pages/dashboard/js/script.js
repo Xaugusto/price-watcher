@@ -1,11 +1,12 @@
 import Prod from "./consulta.js";
 
 document.addEventListener('DOMContentLoaded', async function () {
+
     const params = new URLSearchParams(window.location.search);
     const nome = params.get('nome');
 
     if (nome) {
-        document.getElementById('nomeUsuario').textContent = nome;
+        $('#nomeUsuario').text(nome);
         const modal = new bootstrap.Modal(document.getElementById('modalBoasVindas'));
         modal.show();
     }
@@ -13,15 +14,59 @@ document.addEventListener('DOMContentLoaded', async function () {
     const products = new Prod();
     const get = await products.getValues();
 
-    if (get) {
-        products.renderizarProd1(get, 0);
-        products.renderizarProd2(get, 1);
-        products.renderizarProd3(get, 2);
-        products.renderizarProd4(get, 3);
+    if (!get) {
+        console.log('Produto não consultado.');
+        return;
     }
 
-    else {
-        console.log('produto não consultado' + get);
+    let cards = 0;
+
+    function renderizarPagina() {
+        products.renderizarProd1(get, cards);
+        products.renderizarProd2(get, cards + 1);
+        products.renderizarProd3(get, cards + 2);
+        products.renderizarProd4(get, cards + 3);
+
+        // Atualiza os botões
+        $('#paginaAnterior').prop('disabled', cards === 0);
+        $('#proximaPagina').prop('disabled', cards + 4 >= get.length);
+    }
+
+    // Renderiza a primeira página
+    renderizarPagina();
+
+    // Próxima página
+    $('#proximaPagina').on('click', function () {
+
+        if (cards + 4 >= get.length) {
+            return;
+        }
+
+        cards += 4;
+        renderizarPagina();
+    });
+
+    // Página anterior
+    $('#paginaAnterior').on('click', function () {
+
+        if (cards === 0) {
+            return;
+        }
+
+        cards -= 4;
+        renderizarPagina();
+    });
+
+    window.removerProduct = async function (i) {
+        await products.removerProduto(i);
+
+        const getAtualizado = await products.getValues();
+
+        if (!getAtualizado) return;
+
+        products.renderizarProd1(getAtualizado, cards);
+        products.renderizarProd2(getAtualizado, cards + 1);
+        products.renderizarProd3(getAtualizado, cards + 2);
+        products.renderizarProd4(getAtualizado, cards + 3);
     }
 });
-

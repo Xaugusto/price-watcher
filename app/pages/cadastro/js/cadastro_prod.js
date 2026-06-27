@@ -1,4 +1,5 @@
-import { Key, Host } from './../../../../assets/resourses/js/chaveapi.js'
+const Key = 'e011e1c3aemsh3cc122a84507531p18ef16jsn4eb4489532fb';
+const Host = 'real-time-amazon-data.p.rapidapi.com';
 export default class Prod {
     url;
     id_amazon;
@@ -20,6 +21,7 @@ export default class Prod {
         const match = url.match(regex);
 
         if (match && match[1]) {
+            console.log(match[1]);
             return match[1];
         }
         return "ASIN não encontrado";
@@ -41,6 +43,12 @@ export default class Prod {
         try {
             const respose = await fetch(url, options);
             const res = await respose.json();
+
+            console.log("📡 Resposta completa da API:", res);
+            console.log("📦 Nome:", res.data.product_title);
+            console.log("💰 Preço:", res.data.product_price);
+            console.log("🖼️ Imagem:", res.data.product_photos[0]);
+            console.log("📝 Descrição:", res.data.product_description);
 
             this.nome = res.data.product_title;
             this.preco = res.data.product_price;

@@ -1,43 +1,35 @@
 const loginEmail = document.getElementById('loginEmail');
 const loginSenha = document.getElementById('loginPassword');
-const loginButonn = document.getElementById('Logar');
-const erroEmailLogin = document.getElementById('erroEmail');
-const erroSenhaLogin = document.getElementById('erroSenha');
+const loginButton = document.getElementById('Logar');
 
 function verificarEmail() {
     if (loginEmail.value === '') {
-        erroEmailLogin.textContent = 'O email é obrigatório';
+        loginEmail.setCustomValidity('O email é obrigatório');
+    } else if (!loginEmail.validity.valid) {
+        loginEmail.setCustomValidity('Digite um email válido');
+    } else {
+        loginEmail.setCustomValidity('');
     }
-    else if (!loginEmail.validity.valid) {
-        erroEmailLogin.textContent = 'Digite um email válido';
-    }
-    else {
-        erroEmailLogin.textContent = '';
-    }
+    loginEmail.reportValidity();
 }
 
 function verificarSenha() {
     if (loginSenha.value.trim() === '') {
-        erroSenhaLogin.textContent = 'A senha é obrigatória';
+        loginSenha.setCustomValidity('A senha é obrigatória');
+    } else {
+        loginSenha.setCustomValidity('');
     }
-    else {
-        erroSenhaLogin.textContent = '';
-    }
+    loginSenha.reportValidity();
 }
 
 function atualizarBotaoLogin() {
-    const loginEmailValid = loginEmail.validity.valid && loginEmail.value !== '';
-    const loginSenhaValid = loginSenha.value.trim() !== '';
-
-    loginButonn.disabled = !(loginEmailValid && loginSenhaValid);
+    const emailValido = loginEmail.validity.valid && loginEmail.value !== '';
+    const senhaValida = loginSenha.value.trim() !== '';
+    loginButton.disabled = !(emailValido && senhaValida);
 }
 
-loginEmail.addEventListener('input', () => {
-    verificarEmail();
-    atualizarBotaoLogin();
-});
+loginEmail.addEventListener('blur', () => { verificarEmail(); atualizarBotaoLogin(); });
+loginSenha.addEventListener('blur', () => { verificarSenha(); atualizarBotaoLogin(); });
 
-loginSenha.addEventListener('input', () => {
-    verificarSenha();
-    atualizarBotaoLogin();
-});
+loginEmail.addEventListener('input', () => { loginEmail.setCustomValidity(''); atualizarBotaoLogin(); });
+loginSenha.addEventListener('input', () => { loginSenha.setCustomValidity(''); atualizarBotaoLogin(); });

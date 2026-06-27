@@ -34,44 +34,400 @@
       "id": "Kndn2ksAJ7g"
     },
     {
-      "url": "https://www.amazon.com.br/PlayStation%C2%AE5-Slim-Digital-825GB-Turismo/dp/B0FPGF9J2J/?_encoding=UTF8&pd_rd_w=lOZwE&content-id=amzn1.sym.61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_p=61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_r=RT5GEGDCNPAXAG3Y8CNT&pd_rd_wg=Aadph&pd_rd_r=2d9e8758-7b1d-4cce-98c4-f06e2c785a99&ref_=pd_hp_d_atf_dealz_cs",
-      "id_amazon": "B0FPGF9J2J",
-      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
-      "preco": "3.699,90",
+      "url": "https://www.amazon.com.br/GameSir-Tegenaria-Lite-Controller-Ultra-Low/dp/B0F489G115/?_encoding=UTF8&pd_rd_w=M67Rq&content-id=amzn1.sym.61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_p=61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_r=RVCK001BPVME45E4F9JJ&pd_rd_wg=l2M47&pd_rd_r=1b0b0b6a-ff16-4f61-a350-e271dfbe8688&ref_=pd_hp_d_atf_dealz_cs",
+      "id_amazon": "B0F489G115",
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "139,99",
       "meta": "100",
-      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
       "id_user": "gyyk1h8JlyI",
-      "id": "UOuvnLFtoN8"
+      "id": "rrGyMCqu-yA"
+    },
+    {
+      "url": "amazon.com.br/dp/B0FB8SXVSM/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0FB8SXVSM&pd_rd_w=8QxSh&content-id=amzn1.sym.01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_p=01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_r=21F4S9M0WPA2C6Y4VHF8&pd_rd_wg=c9DoC&pd_rd_r=2d6e8ec6-fb8c-4aab-8d7e-09b8ff5dab98&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw",
+      "id_amazon": "B0FB8SXVSM",
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "279,00",
+      "meta": "",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "SF-h1JlYuTI"
+    },
+    {
+      "url": "amazon.com.br/dp/B0FB8SXVSM/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0FB8SXVSM&pd_rd_w=8QxSh&content-id=amzn1.sym.01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_p=01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_r=21F4S9M0WPA2C6Y4VHF8&pd_rd_wg=c9DoC&pd_rd_r=2d6e8ec6-fb8c-4aab-8d7e-09b8ff5dab98&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw",
+      "id_amazon": "B0FB8SXVSM",
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "279,00",
+      "meta": "",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "4vho2sVmZW0"
+    },
+    {
+      "url": "amazon.com.br/dp/B0FB8SXVSM/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0FB8SXVSM&pd_rd_w=8QxSh&content-id=amzn1.sym.01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_p=01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_r=21F4S9M0WPA2C6Y4VHF8&pd_rd_wg=c9DoC&pd_rd_r=2d6e8ec6-fb8c-4aab-8d7e-09b8ff5dab98&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw",
+      "id_amazon": "B0FB8SXVSM",
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "279,00",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "-l-NUPYZmRc"
+    },
+    {
+      "url": "amazon.com.br/dp/B0FB8SXVSM/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0FB8SXVSM&pd_rd_w=8QxSh&content-id=amzn1.sym.01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_p=01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_r=21F4S9M0WPA2C6Y4VHF8&pd_rd_wg=c9DoC&pd_rd_r=2d6e8ec6-fb8c-4aab-8d7e-09b8ff5dab98&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw",
+      "id_amazon": "B0FB8SXVSM",
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "279,00",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "q51-nyb-biw"
+    },
+    {
+      "url": "amazon.com.br/dp/B0FB8SXVSM/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0FB8SXVSM&pd_rd_w=8QxSh&content-id=amzn1.sym.01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_p=01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_r=21F4S9M0WPA2C6Y4VHF8&pd_rd_wg=c9DoC&pd_rd_r=2d6e8ec6-fb8c-4aab-8d7e-09b8ff5dab98&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw",
+      "id_amazon": "B0FB8SXVSM",
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "279,00",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "Zl8zuHBpUrk"
+    },
+    {
+      "url": "amazon.com.br/dp/B0FB8SXVSM/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0FB8SXVSM&pd_rd_w=8QxSh&content-id=amzn1.sym.01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_p=01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_r=21F4S9M0WPA2C6Y4VHF8&pd_rd_wg=c9DoC&pd_rd_r=2d6e8ec6-fb8c-4aab-8d7e-09b8ff5dab98&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw",
+      "id_amazon": "B0FB8SXVSM",
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "279,00",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "a12lHo9YGHM"
+    },
+    {
+      "url": "amazon.com.br/dp/B0FB8SXVSM/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0FB8SXVSM&pd_rd_w=8QxSh&content-id=amzn1.sym.01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_p=01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_r=21F4S9M0WPA2C6Y4VHF8&pd_rd_wg=c9DoC&pd_rd_r=2d6e8ec6-fb8c-4aab-8d7e-09b8ff5dab98&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw",
+      "id_amazon": "B0FB8SXVSM",
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "279,00",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "9SEFeNcNclY"
+    },
+    {
+      "url": "amazon.com.br/dp/B0FB8SXVSM/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0FB8SXVSM&pd_rd_w=8QxSh&content-id=amzn1.sym.01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_p=01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_r=21F4S9M0WPA2C6Y4VHF8&pd_rd_wg=c9DoC&pd_rd_r=2d6e8ec6-fb8c-4aab-8d7e-09b8ff5dab98&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw",
+      "id_amazon": "B0FB8SXVSM",
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "279,00",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "4CASxwTi3ok"
+    },
+    {
+      "url": "amazon.com.br/dp/B0FB8SXVSM/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0FB8SXVSM&pd_rd_w=8QxSh&content-id=amzn1.sym.01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_p=01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_r=21F4S9M0WPA2C6Y4VHF8&pd_rd_wg=c9DoC&pd_rd_r=2d6e8ec6-fb8c-4aab-8d7e-09b8ff5dab98&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw",
+      "id_amazon": "B0FB8SXVSM",
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "279,00",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "Kb_IGJf5PN8"
+    },
+    {
+      "url": "amazon.com.br/dp/B0FB8SXVSM/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0FB8SXVSM&pd_rd_w=8QxSh&content-id=amzn1.sym.01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_p=01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_r=21F4S9M0WPA2C6Y4VHF8&pd_rd_wg=c9DoC&pd_rd_r=2d6e8ec6-fb8c-4aab-8d7e-09b8ff5dab98&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw",
+      "id_amazon": "B0FB8SXVSM",
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "279,00",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "ytMa72bpD5s"
+    },
+    {
+      "url": "amazon.com.br/dp/B0FB8SXVSM/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B0FB8SXVSM&pd_rd_w=8QxSh&content-id=amzn1.sym.01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_p=01db1132-7a41-4b6b-bb8e-16b3635a59d0&pf_rd_r=21F4S9M0WPA2C6Y4VHF8&pd_rd_wg=c9DoC&pd_rd_r=2d6e8ec6-fb8c-4aab-8d7e-09b8ff5dab98&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw",
+      "id_amazon": "B0FB8SXVSM",
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "279,00",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "WVX5xG9YOHE"
+    },
+    {
+      "url": "https://www.amazon.com.br/GameSir-Tegenaria-Lite-Controller-Ultra-Low/dp/B0F489G115/?_encoding=UTF8&pd_rd_w=M67Rq&content-id=amzn1.sym.61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_p=61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_r=RVCK001BPVME45E4F9JJ&pd_rd_wg=l2M47&pd_rd_r=1b0b0b6a-ff16-4f61-a350-e271dfbe8688&ref_=pd_hp_d_atf_dealz_cs",
+      "id_amazon": "B0F489G115",
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "139,99",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "XdrhvIRcS7I"
+    },
+    {
+      "url": "https://www.amazon.com.br/GameSir-Tegenaria-Lite-Controller-Ultra-Low/dp/B0F489G115/?_encoding=UTF8&pd_rd_w=M67Rq&content-id=amzn1.sym.61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_p=61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_r=RVCK001BPVME45E4F9JJ&pd_rd_wg=l2M47&pd_rd_r=1b0b0b6a-ff16-4f61-a350-e271dfbe8688&ref_=pd_hp_d_atf_dealz_cs",
+      "id_amazon": "B0F489G115",
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "139,99",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "e42ptinww9M"
     },
     {
       "url": "https://www.amazon.com.br/PlayStation%C2%AE5-Slim-Digital-825GB-Turismo/dp/B0FPGF9J2J/?_encoding=UTF8&pd_rd_w=lOZwE&content-id=amzn1.sym.61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_p=61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_r=RT5GEGDCNPAXAG3Y8CNT&pd_rd_wg=Aadph&pd_rd_r=2d9e8758-7b1d-4cce-98c4-f06e2c785a99&ref_=pd_hp_d_atf_dealz_cs",
       "id_amazon": "B0FPGF9J2J",
       "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
       "preco": "3.699,90",
-      "meta": "100",
+      "meta": "",
       "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
       "id_user": "gyyk1h8JlyI",
-      "id": "MD9-2c_p3U0"
+      "id": "JkRXoxkWwbU"
     },
     {
-      "url": "https://www.amazon.com.br/PlayStation%C2%AE5-Slim-Digital-825GB-Turismo/dp/B0FPGF9J2J/?_encoding=UTF8&pd_rd_w=lOZwE&content-id=amzn1.sym.61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_p=61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_r=RT5GEGDCNPAXAG3Y8CNT&pd_rd_wg=Aadph&pd_rd_r=2d9e8758-7b1d-4cce-98c4-f06e2c785a99&ref_=pd_hp_d_atf_dealz_cs",
-      "id_amazon": "B0FPGF9J2J",
-      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
-      "preco": "3.699,90",
-      "meta": "100",
-      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "url": "https://www.amazon.com.br/GameSir-Tegenaria-Lite-Controller-Ultra-Low/dp/B0F489G115/?_encoding=UTF8&pd_rd_w=M67Rq&content-id=amzn1.sym.61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_p=61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_r=RVCK001BPVME45E4F9JJ&pd_rd_wg=l2M47&pd_rd_r=1b0b0b6a-ff16-4f61-a350-e271dfbe8688&ref_=pd_hp_d_atf_dealz_csGameSir-Tegenaria-Lite-Controller-Ultra-Low/dp/B0F489G115/?_encoding=UTF8&pd_rd_w=M67Rq&content-id=amzn1.sym.61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_p=61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_r=RVCK001BPVME45E4F9JJ&pd_rd_wg=l2M47&pd_rd_r=1b0b0b6a-ff16-4f61-a350-e271dfbe8688&ref_=pd_hp_d_atf_dealz_cs",
+      "id_amazon": "B0F489G115",
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "139,99",
+      "meta": "",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
       "id_user": "gyyk1h8JlyI",
-      "id": "tvV9Cy3eNHs"
+      "id": "mQWNqW1tDDA"
     },
     {
-      "url": "https://www.amazon.com.br/PlayStation%C2%AE5-Slim-Digital-825GB-Turismo/dp/B0FPGF9J2J/?_encoding=UTF8&pd_rd_w=lOZwE&content-id=amzn1.sym.61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_p=61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_r=RT5GEGDCNPAXAG3Y8CNT&pd_rd_wg=Aadph&pd_rd_r=2d9e8758-7b1d-4cce-98c4-f06e2c785a99&ref_=pd_hp_d_atf_dealz_cs",
-      "id_amazon": "B0FPGF9J2J",
+      "url": "https://www.amazon.com.br/GameSir-Tegenaria-Lite-Controller-Ultra-Low/dp/B0F489G115/?_encoding=UTF8&pd_rd_w=M67Rq&content-id=amzn1.sym.61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_p=61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_r=RVCK001BPVME45E4F9JJ&pd_rd_wg=l2M47&pd_rd_r=1b0b0b6a-ff16-4f61-a350-e271dfbe8688&ref_=pd_hp_d_atf_dealz_cs",
+      "id_amazon": "B0F489G115",
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "139,99",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "XQV2oI836UM"
+    },
+    {
+      "url": "https://www.amazon.com.br/GameSir-Tegenaria-Lite-Controller-Ultra-Low/dp/B0F489G115/?_encoding=UTF8&pd_rd_w=M67Rq&content-id=amzn1.sym.61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_p=61456028-3a9b-48b8-875c-7a80718bde94&pf_rd_r=RVCK001BPVME45E4F9JJ&pd_rd_wg=l2M47&pd_rd_r=1b0b0b6a-ff16-4f61-a350-e271dfbe8688&ref_=pd_hp_d_atf_dealz_cs",
+      "id_amazon": "B0F489G115",
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "139,99",
+      "meta": "100",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "id_user": "gyyk1h8JlyI",
+      "id": "jzfH2qsdnpc"
+    },
+    {
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "279,00",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "meta": "200",
+      "id_amazon": "B0FB8SXVSM",
+      "id_user": "gyyk1h8JlyI",
+      "id": "uXX1dXPGuQ8"
+    },
+    {
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "139,99",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "meta": "100",
+      "id_amazon": "B0F489G115",
+      "id_user": "gyyk1h8JlyI",
+      "id": "zVPITAhsICU"
+    },
+    {
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "132,99",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "meta": "100",
+      "id_amazon": "B0F489G115",
+      "id_user": "gyyk1h8JlyI",
+      "id": "WmhBtZ5b3fM"
+    },
+    {
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "132,99",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "meta": "1000",
+      "id_amazon": "B0F489G115",
+      "id_user": "gyyk1h8JlyI",
+      "id": "itv6lHZqiOE"
+    },
+    {
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "132,99",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "meta": "00",
+      "id_amazon": "B0F489G115",
+      "id_user": "gyyk1h8JlyI",
+      "id": "vzKB_i-aXKc"
+    },
+    {
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "132,99",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "meta": "100",
+      "id_amazon": "B0F489G115",
+      "id_user": "gyyk1h8JlyI",
+      "id": "1GbKR_lDCQY"
+    },
+    {
       "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
       "preco": "3.699,90",
-      "meta": "120",
       "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FPGF9J2J",
       "id_user": "gyyk1h8JlyI",
-      "id": "d99n6XHBezQ"
+      "id": "M3mNETzyh70"
+    },
+    {
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "265,05",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FB8SXVSM",
+      "id_user": "gyyk1h8JlyI",
+      "id": "aHe2SccVVMM"
+    },
+    {
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "265,05",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FB8SXVSM",
+      "id_user": "gyyk1h8JlyI",
+      "id": "eQaszS1s0nY"
+    },
+    {
+      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+      "preco": "3.699,90",
+      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FPGF9J2J",
+      "id_user": "gyyk1h8JlyI",
+      "id": "FhGIfYyhqvM"
+    },
+    {
+      "nome": "GameSir G7 SE Controle com Fio para PC, Xbox One, Xbox Series X|S, Gamepad para Jogos Plug and Play (Cinza)",
+      "preco": "265,05",
+      "imagem": "https://m.media-amazon.com/images/I/61kHj5l7bcL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FB8SXVSM",
+      "id_user": "gyyk1h8JlyI",
+      "id": "X_muztRc_xI"
+    },
+    {
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "132,99",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "meta": "100",
+      "id_amazon": "B0F489G115",
+      "id_user": "gyyk1h8JlyI",
+      "id": "IAemnigXjqQ"
+    },
+    {
+      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+      "preco": "3.699,90",
+      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FPGF9J2J",
+      "id_user": "gyyk1h8JlyI",
+      "id": "214XPZHKRJU"
+    },
+    {
+      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+      "preco": "3.699,90",
+      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FPGF9J2J",
+      "id_user": "gyyk1h8JlyI",
+      "id": "6PxzX9c8aoo"
+    },
+    {
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "132,99",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "meta": "100",
+      "id_amazon": "B0F489G115",
+      "id_user": "gyyk1h8JlyI",
+      "id": "ZPCifPaA0iQ"
+    },
+    {
+      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+      "preco": "3.699,90",
+      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FPGF9J2J",
+      "id_user": "gyyk1h8JlyI",
+      "id": "pFyt_LQsmwA"
+    },
+    {
+      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+      "preco": "3.699,90",
+      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FPGF9J2J",
+      "id_user": "gyyk1h8JlyI",
+      "id": "ZaXALR1G5k4"
+    },
+    {
+      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+      "preco": "3.699,90",
+      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FPGF9J2J",
+      "id_user": "gyyk1h8JlyI",
+      "id": "PbjXTBLUUOc"
+    },
+    {
+      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+      "preco": "3.699,90",
+      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FPGF9J2J",
+      "id_user": "gyyk1h8JlyI",
+      "id": "l1WMerRgTf0"
+    },
+    {
+      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+      "preco": "3.699,90",
+      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FPGF9J2J",
+      "id_user": "gyyk1h8JlyI",
+      "id": "Ei7SNe95s9g"
+    },
+    {
+      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+      "preco": "3.699,90",
+      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FPGF9J2J",
+      "id_user": "gyyk1h8JlyI",
+      "id": "AN9OTyegK1Y"
+    },
+    {
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "132,99",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "meta": "100",
+      "id_amazon": "B0F489G115",
+      "id_user": "gyyk1h8JlyI",
+      "id": "sRDUmJ9dBy0"
+    },
+    {
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "132,99",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "meta": "100",
+      "id_amazon": "B0F489G115",
+      "id_user": "gyyk1h8JlyI",
+      "id": "guM7ED-UhUY"
+    },
+    {
+      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+      "preco": "3.699,90",
+      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FPGF9J2J",
+      "id_user": "gyyk1h8JlyI",
+      "id": "mGbGoHgmYsQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
