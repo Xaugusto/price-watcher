@@ -27,15 +27,13 @@ document.addEventListener('DOMContentLoaded', async function () {
         products.renderizarProd3(get, cards + 2);
         products.renderizarProd4(get, cards + 3);
 
-        // Atualiza os botões
         $('#paginaAnterior').prop('disabled', cards === 0);
         $('#proximaPagina').prop('disabled', cards + 4 >= get.length);
     }
 
-    // Renderiza a primeira página
+
     renderizarPagina();
 
-    // Próxima página
     $('#proximaPagina').on('click', function () {
 
         if (cards + 4 >= get.length) {
@@ -46,7 +44,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         renderizarPagina();
     });
 
-    // Página anterior
     $('#paginaAnterior').on('click', function () {
 
         if (cards === 0) {

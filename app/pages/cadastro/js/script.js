@@ -5,7 +5,6 @@ const button = document.getElementById("mandar");
 async function cadastrar(event) {
     event.preventDefault();
 
-    console.log("SUBMIT BLOQUEADO");
 
     const produto = new Prod();
 
@@ -32,6 +31,9 @@ async function cadastrar(event) {
             const modal = new bootstrap.Modal(modalEl);
             modal.show();
         }
+    }
+    else {
+        console.log("❌ Produto não encontrado!");
     }
 }
 

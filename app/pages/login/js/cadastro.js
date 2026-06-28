@@ -8,6 +8,10 @@ export default class Cadastro {
         this.email = $('#signupEmail');
         this.telefone = $('#signupPhone');
         this.senha = $('#signupPassword');
+        console.log(this.nome.val());
+        console.log(this.email.val());
+        console.log(this.telefone.val());
+        console.log(this.senha.val());
     }
 
     getNome() {
