@@ -99,7 +99,7 @@ export default class Products {
 
     renderizarProd2(products, i) {
         if (!products[i]) {
-            document.getElementById('product-1').innerHTML = '';
+            document.getElementById('product-2').innerHTML = '';
             return
         }
         document.getElementById('product-2').innerHTML = `

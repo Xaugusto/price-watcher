@@ -27,6 +27,13 @@
       "telefone": "(42) 98825-4596",
       "senha": "123456",
       "id": "LPhckrhCc6I"
+    },
+    {
+      "nome": "rafa",
+      "email": "rafa@email.com",
+      "telefone": "(71) 40028-922",
+      "senha": "123456",
+      "id": "HU3SoNGNnkw"
     }
   ],
   "product": [
@@ -93,6 +100,24 @@
       "id_amazon": "B123456789",
       "id_user": "gyyk1h8JlyI",
       "id": "9z-mP9GfGqY"
+    },
+    {
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "132,99",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "meta": "100",
+      "id_amazon": "B0F489G115",
+      "id_user": "gyyk1h8JlyI",
+      "id": "S0WDZO4p3rM"
+    },
+    {
+      "nome": "Controle GameSir Tegenaria Lite com Fio para Switch, PC, Android, iOS e Steam, Design Retrô Anos 90, Hall Effect Anti-Drift, 1000Hz Polling Rate, Baixa Latência, Botões Programáveis, Vibração Dupla - Branco Elegante",
+      "preco": "132,99",
+      "imagem": "https://m.media-amazon.com/images/I/51iviI6rvrL._AC_SL1000_.jpg",
+      "meta": "100",
+      "id_amazon": "B0F489G115",
+      "id_user": "HU3SoNGNnkw",
+      "id": "hQp0uVowD94"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

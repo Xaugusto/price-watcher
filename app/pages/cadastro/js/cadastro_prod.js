@@ -28,8 +28,8 @@ export default class Prod {
     }
 
     async buscarProducts() {
-        const id_api = this.id_amazon; // ← era this.id
-        const url = `https://real-time-amazon-data.p.rapidapi.com/product-details?asin=B123&country=BR`;
+        const id_api = this.id_amazon;
+        const url = `https://real-time-amazon-data.p.rapidapi.com/product-details?asin=${id_api}&country=BR`;
 
         const options = {
             method: 'GET',
