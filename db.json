@@ -34,6 +34,13 @@
       "telefone": "(71) 40028-922",
       "senha": "123456",
       "id": "HU3SoNGNnkw"
+    },
+    {
+      "nome": "AUGUSTO EMANUEL PEREIRA",
+      "email": "augustoemanuel@email",
+      "telefone": "(40) 02892-2",
+      "senha": "123456",
+      "id": "0kIB5CYn3U8"
     }
   ],
   "product": [
@@ -136,6 +143,15 @@
       "id_amazon": "B0FPGF9J2J",
       "id_user": "HU3SoNGNnkw",
       "id": "MmpxpNJpMH0"
+    },
+    {
+      "nome": "PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7",
+      "preco": "3.699,90",
+      "imagem": "https://m.media-amazon.com/images/I/71WCygaQDAL._AC_SL1500_.jpg",
+      "meta": "100",
+      "id_amazon": "B0FPGF9J2J",
+      "id_user": "HU3SoNGNnkw",
+      "id": "M_fKFyJKa8o"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
